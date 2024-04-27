@@ -1,0 +1,22 @@
+#!name=去广告｜IT 之家
+#!desc=IT 之家去广告\n作者：keywos
+#!author=@key
+#!category=⚙️ ▸ NoAds
+#!arguments=script-update:-1, banner:0 ,bannerAd:1, top:1
+#!arguments-desc=开启去除对应广告为: 1\n关闭为: 0\n\n去除轮播图广告: bannerAd\n去除整个轮播图: banner\n去除置顶: top
+#!date=2024-01-27 20:59:38
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/Keywos/rule/main/script/ithome/it.sgmodule/_end_/%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9CIT%20%E4%B9%8B%E5%AE%B6.sgmodule?n=%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9CIT%20%E4%B9%8B%E5%AE%B6%2BIT%20%E4%B9%8B%E5%AE%B6%E5%8E%BB%E5%B9%BF%E5%91%8A%5Cn%E4%BD%9C%E8%80%85%EF%BC%9A%40keywos&type=surge-module&target=surge-module&del=true&category=%E2%9A%99%EF%B8%8F%20%E2%96%B8%20NoAds
+
+
+[URL Rewrite]
+^https?:\/\/api\.zuihuimai\.com\/static\/.*\/hongbao - reject
+^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
+
+[Script]
+ItHome = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo), script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/ithome/js/index.js, requires-body=true, max-size=0, script-update-interval={{{script-update}}}, argument="{"banner":"{{{banner}}}","bannerAd":"{{{bannerAd}}}","top":"{{{top}}}"}"
+
+[MITM]
+hostname = %APPEND% api.zuihuimai.com, dat.ruanmei.com, napi.ithome.com
+

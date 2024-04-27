@@ -1,0 +1,19 @@
+#!name=去广告｜微信公众号
+#!desc=移除公众号推广内容\n作者：RuCu6
+#!author=RuCu6
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Weixin.png
+#!category=⚙️ ▸ NoAds
+#!homepage=https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
+#!date=2023-09-08 13:48:55
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/Weixin_Official_Accounts_remove_ads.plugin/_end_/%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9C%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7.sgmodule?n=%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9C%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7+%E7%A7%BB%E9%99%A4%E5%85%AC%E4%BC%97%E5%8F%B7%E6%8E%A8%E5%B9%BF%E5%86%85%E5%AE%B9%5Cn%E4%BD%9C%E8%80%85%EF%BC%9A%40RuCu6&type=loon-plugin&target=surge-module&del=true&category=%E2%9A%99%EF%B8%8F%20%E2%96%B8%20NoAds
+
+
+[Map Local]
+# 移除公众号中的推广内容 //mp.weixin.qq.com
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+[MITM]
+hostname = %APPEND% mp.weixin.qq.com
+
