@@ -1,6 +1,6 @@
 #!name=解锁｜网易云音乐
 #!desc=解锁会员音频、音质\n作者：Yuheng0101
-#!category=🍿解锁增强
+#!category=🍿 解锁增强
 #!system=ios
 #!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d3/77/da/d377dac9-b69e-5b7c-e7cb-b761f96decec/AppIcon-1x_U007emarketing-0-6-0-0-85-220-0.png/144x144.png
 #!date=2024-06-12 22:03:00
