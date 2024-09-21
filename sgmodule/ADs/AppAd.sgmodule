@@ -133,5 +133,3 @@ Admodule = type=http-response, pattern=^https?:\/\/lysl2020.com/wp-json/wp/v2/po
 
 [MITM]
 hostname = %APPEND% admin-app.edifier.com, *.m.taobao.com, ms.jr.jd.com, api.*.jd.com, api.next.bspapp.com, api.bspapp.com, vip7.fzwdyy.cn, vpic.cms.qq.com, app-v1.ecoliving168.com, a.weilai555.com, api.coolapk.com, sdk.alibaba.com.ailbaba.me, js-ad.ayximgss.com, pzoap.moedot.net, pipi.4kya.com, image.cdn.zxrtb.com, *.speedtest.cn, *.pinduoduo.com, log-api.pangolin-sdk-toutiao*.com, video-dsp.pddpic.com, *.gdt.qq.com, access.pangolin-sdk-toutiao*.com, *.pglstatp-toutiao.com, adsmind.gdtimg.com, pgdt.gtimg.cn, us.l.qq.com, open.e.kuaishou.com, gromore.pangolin-sdk-toutiao.com, adx-bj.anythinktech.com, toblog.ctobsnssdk.com, sdk.e.qq.com, analytics.oceanengine.com, adsfileretry.service.kugou.com, gateway.kugou.com, *.mygolbs.com, cpu-openapi.baidu.com, mobads.baidu.com, bid.adview.cn, api.douban.com, mime.baidu.com, bgg.baidu.com, app-statistics.edifier.com, qadx*.qinlinad.com, mall-dsp*.qinlinkeji.com, analysis.20kaka.cn, q12.tuanyougou.com, www.i3zh.com, *.sharedaka.com, comic.321mh.com, *.enmonster.com, mp.weixin.qq.com, lysl2020.com
-
-打开 Script-Hub 编辑
