@@ -1,0 +1,33 @@
+#!name=去除广告｜美团
+#!desc= 美团 & 美团外卖去广告\n作者：fmz200
+#!author=fmz200,JM for respect of Walalala
+#!icon=https://raw.githubusercontent.com/johnmillzer/Icon/main/meituan.png
+#!category=去除广告
+#!tag=去广告
+#!loon_version=3.2.1(745)
+#!date=2024-10-19 23:06:02
+
+[URL Rewrite]
+#首页右下角广告
+^https:\/\/p(0|1)\.meituan\.net\/linglong\/\w{36,38}\.gif - reject
+^https:\/\/p0\.meituan\.net\/travelcube\/7b1797f1a0e9dd936ee134657470507f2067\.png($|\.webp($|[^\s]+)) - reject
+#资质层
+^https:\/\/p0\.meituan\.net\/linglong\/7ae4f2836035e4b439e58476985592142777\.png($|\.webp($|@[^\s]+)) - reject
+
+[Map Local]
+# > 美团 & 美团外卖
+^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data-type=text data="{}" status-code=200
+
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) data-type=text data="{}" status-code=200
+
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data-type=text data="{}" status-code=200
+
+^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json data-type=text data="{}" status-code=200
+
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200
+
+# 美团订单详情页更多推荐
+^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = %APPEND% img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, p0.meituan.net, p1.meituan.net
