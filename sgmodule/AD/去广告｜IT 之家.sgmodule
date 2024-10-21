@@ -1,22 +1,23 @@
-#!name=去广告｜IT 之家
-#!desc=IT 之家去广告\n作者：keywos
-#!author=@key
-#!category=⚙️ ▸ NoAds
-#!arguments=script-update:-1, banner:0 ,bannerAd:1, top:1
-#!arguments-desc=开启去除对应广告为: 1\n关闭为: 0\n\n去除轮播图广告: bannerAd\n去除整个轮播图: banner\n去除置顶: top
-#!date=2024-01-27 20:59:38
+#!name=去除广告｜IT之家
+#!desc= 去除IT之家广告\n作者：bai1zi,Key
+#!category=去除广告
 
-# 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/Keywos/rule/main/script/ithome/it.sgmodule/_end_/%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9CIT%20%E4%B9%8B%E5%AE%B6.sgmodule?n=%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9CIT%20%E4%B9%8B%E5%AE%B6%2BIT%20%E4%B9%8B%E5%AE%B6%E5%8E%BB%E5%B9%BF%E5%91%8A%5Cn%E4%BD%9C%E8%80%85%EF%BC%9A%40keywos&type=surge-module&target=surge-module&del=true&category=%E2%9A%99%EF%B8%8F%20%E2%96%B8%20NoAds
-
+[Rule]
+URL-REGEX,^https:\/\/api\.zuihuimai\.com,REJECT
 
 [URL Rewrite]
 ^https?:\/\/api\.zuihuimai\.com\/static\/.*\/hongbao - reject
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
 
 [Script]
-ItHome = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo), script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/ithome/js/index.js, requires-body=true, max-size=0, script-update-interval={{{script-update}}}, argument="{"banner":"{{{banner}}}","bannerAd":"{{{bannerAd}}}","top":"{{{top}}}"}"
+# > IT之家 去广告
+页面广告 = type=http-response, pattern=^https:\/\/m\.ithome\.com\/api\/news\/newslistpageget, script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js, requires-body=true, max-size=0, script-update-interval=0
+
+列表广告 = type=http-response, pattern=^https:\/\/api\.ithome\.com\/json\/(listpage|newslist)\/news, script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js, requires-body=true, max-size=0, script-update-interval=0
+
+轮播广告 = type=http-response, pattern=^https:\/\/api\.ithome\.com\/json\/slide\/index, script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js, requires-body=true, max-size=0, script-update-interval=0
+
+IT之家去广告 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo), script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/ithome/js/index.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% api.zuihuimai.com, dat.ruanmei.com, napi.ithome.com
-
+hostname = %APPEND% api.ithome, m.ithome.com, napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
