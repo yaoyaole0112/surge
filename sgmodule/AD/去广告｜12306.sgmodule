@@ -1,14 +1,12 @@
-#!name=去广告｜12306
-#!desc=12306去广告\n作者：RuCu6
-#!author=RuCu6
+#!name=去除广告｜12306
+#!desc=过滤12306应用内广告及开屏广告\n作者：RuCu6
+#!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/12306.png
-#!category=⚙️ ▸ NoAds
-#!homepage=https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
-#!date=2024-02-20 17:20:29
-
-# 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/12306_remove_ads.plugin/_end_/%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9C12306.sgmodule?n=%E5%8E%BB%E5%B9%BF%E5%91%8A%EF%BD%9C12306%2B12306%E5%8E%BB%E5%B9%BF%E5%91%8A%5Cn%E4%BD%9C%E8%80%85%EF%BC%9A%40RuCu6&type=loon-plugin&target=surge-module&del=true&category=%E2%9A%99%EF%B8%8F%20%E2%96%B8%20NoAds
-
+#!category=去除广告
+#!openUrl=https://apps.apple.com/app/id564818797
+#!tag=去广告
+#!loon_version=3.2.1(745)
+#!date=2024-09-16 12:28:41
 
 [Rule]
 # 放行规则
@@ -16,11 +14,10 @@ DOMAIN,ad.12306.cn,DIRECT
 
 [Script]
 # 移除12306开屏广告
-移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Script/lodepuly/12306/12306_remove_splashscreen_ads.js, requires-body=true
+移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://proxyresource.pages.dev/Resource/Script/12306/12306_remove_splashscreen_ads.js, requires-body=true
 
 # 移除12306应用内广告
-移除12306应用内广告 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Script/lodepuly/12306/12306_remove_ads.js
+移除12306应用内广告 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/johnmillzer/tool/main/Scripts/12306_remove_ads.js
 
 [MITM]
 hostname = %APPEND% ad.12306.cn, mobile.12306.cn
-
