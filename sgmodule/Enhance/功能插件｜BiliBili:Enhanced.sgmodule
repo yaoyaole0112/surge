@@ -1,0 +1,20 @@
+#!name=功能插件｜BiliBili:Enhanced
+#!desc=哔哩哔哩：增强模式（中国站功能增强及UI自定义）\n作者：BiliUniverse
+#!author=VirgilClyne
+#!icon=https://github.com/BiliUniverse/Enhanced/raw/main/src/assets/icon_rounded.png
+#!category=功能插件
+#!openUrl=http://boxjs.com/#/app/BiliBili.Enhanced
+#!homepage=https://enhanced.biliuniverse.io
+#!manual=https://manual.biliuniverse.io
+
+[Script]
+BiliBili.Enhanced.x.resource.show.tab.v2 = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/resource\/show\/tab\/v2\?, script-path=https://raw.githubusercontent.com/BiliUniverse/Enhanced/main/js/BiliBili.Enhanced.response.js, requires-body=true, engine=jsc
+
+BiliBili.Enhanced.x.v2.account.mine = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/account\/mine(\/ipad)?\?, script-path=https://raw.githubusercontent.com/BiliUniverse/Enhanced/main/js/BiliBili.Enhanced.response.js, requires-body=true, engine=jsc
+
+BiliBili.Enhanced.x.v2.region.index = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/region\/index\?, script-path=https://raw.githubusercontent.com/BiliUniverse/Enhanced/main/js/BiliBili.Enhanced.response.js, requires-body=true, engine=jsc
+
+BiliBili.Enhanced.x.v2.channel.region.list = type=http-response, pattern=^https?:\/\/app\.bili(bili\.com|api\.net)\/x\/v2\/channel\/region\/list\?, script-path=https://raw.githubusercontent.com/BiliUniverse/Enhanced/main/js/BiliBili.Enhanced.response.js, requires-body=true, engine=jsc
+
+[MITM]
+hostname = %APPEND% app.bilibili.com, app.biliapi.net
