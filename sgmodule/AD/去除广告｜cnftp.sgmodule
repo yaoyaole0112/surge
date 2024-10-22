@@ -1,0 +1,95 @@
+#!name=去除广告｜cnftp
+#!desc=China Film and Television Platform.\n作者：RuCu6
+#!author=RuCu6
+#!category=去除广告
+#!update=2023-09-11 09:05
+
+[URL Rewrite]
+# 腾讯视频
+^http:\/\/[0-9\.:]*\/?(defaultts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
+^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ - reject
+^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|varietyts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
+
+[Map Local]
+^https:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? data-type=text data="{}" status-code=200
+
+# 播放页,开通会员提示
+^https:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200
+
+# 首页,左上角推广,信息流,底部菜单红点,顶部菜单,搜索框
+^http:\/\/[0-9\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? data-type=text data="{}" status-code=200
+
+^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? data-type=text data="{}" status-code=200
+
+^https:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? data-type=text data="{}" status-code=200
+
+# 升级弹窗
+^https:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? data-type=text data="{}" status-code=200
+
+# 播放页,主演陪你看,弹窗动图
+^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.(pisp\.scripts\.get|xspace\.play\.position\.preload\.query|xspace\.poplayer\.position\.query) data-type=text data="{}" status-code=200
+
+[Script]
+# 开屏广告,播放广告
+cnftp = type=http-response, pattern=^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 首页,信息流广告,我的页面,左上角天气,二楼,底部菜单,顶部菜单,青少年弹窗
+cnftp = type=http-response, pattern=^http:\/\/[0-9\.]+\/3f1\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^http:\/\/access\.if\.iqiyi\.com\/3f1\/cards\.iqiyi\.com\/(views_category\/3\.0\/category_home|views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 搜索页,列表广告,填充词
+cnftp = type=http-response, pattern=^https:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/search\.video\.iqiyi\.com\/q\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 评论区
+cnftp = type=http-response, pattern=^https:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https?:\/\/dc2?\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 我的页面
+cnftp = type=http-response, pattern=^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 播放详情页
+cnftp = type=http-response, pattern=^https:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 首页信息流,播放详情页,首页菜单,我的页面,评论区,底部菜单
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query), script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.ycp\.query, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 搜索页
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 青少年模式弹窗
+cnftp = type=http-response, pattern=^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 热剧弹窗
+cnftp = type=http-response, pattern=^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+# 开屏广告
+cnftp = type=http-response, pattern=^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% -i.vip.iqiyi.com, *.iqiyi.com, *.mgtv.com, acs.youku.com, push.m.youku.com, un-acs.youku.com
