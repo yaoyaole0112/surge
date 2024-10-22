@@ -1,0 +1,9 @@
+#!name=面板工具｜媒体解锁检测
+#!desc=Netflix, Disney+, YouTube Unlock Detection\n作者：Rabbit-Spec
+
+[Panel]
+stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+[Script]
+stream-all = type=generic, script-path=https://raw.githubusercontent.com/Helios12138-king/scripts/master/stream-all.js, timeout=60
+#https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Stream-All/Moore/Stream-All.js
+#https://raw.githubusercontent.com/Helios12138-king/scripts/master/stream-all.js
