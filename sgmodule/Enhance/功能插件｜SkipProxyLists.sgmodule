@@ -1,0 +1,8 @@
+#!name=功能插件｜Skip Proxy Lists
+#!desc=跳过部分应用的代理检测\n作者：mieqq
+#!category=功能插件
+
+[General]
+skip-proxy = %APPEND% www.baidu.com, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, www.shanbay.com, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, id6.me
+
+always-real-ip = %APPEND% easy-login.10099.com.cn, *-update.xoyocdn.com, id6.me
