@@ -3723,7 +3723,7 @@ bilibili_json13 = type=http-response, pattern=^https://app.bilibili.com/x/v2/sea
 
 weibo_json22 = type=http-response, pattern=^https://api.weibo.cn/2/!/client/light_skin, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, requires-body=true
 
-Umetrip_remove_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://proxyresource.pages.dev/Resource/Script/Umetrip/Umetrip_remove_ads.js, requires-body=true
+Umetrip_remove_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://kelee.one/Resource/Script/Umetrip/Umetrip_remove_ads.js, requires-body=true
 
 amdc = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amdc.js, requires-body=true
 
