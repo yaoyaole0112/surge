@@ -5,6 +5,7 @@
 #{{{ICON}}}&icon-
 #!arguments=定时查询:*/5 * * * *,禁用MITM:hostname
 #!arguments-desc=定时查询：自定义Cron表达式，禁用输入 # 。\n\n禁用获取CK，禁用MITM输入 # 。
+
 [General]
 # 联通余量(v4)
 force-http-engine-hosts = %APPEND% 10010v4.com, m.client.10010.com
