@@ -5,6 +5,8 @@
 #!category=去除广告
 #!openUrl=https://github.com/GeQ1an/Rules/tree/master/Loon
 #!homepage=https://github.com/GeQ1an/Rules/tree/master
+#!Repo=https://raw.githubusercontent.com/GeQ1an/Rules/refs/heads/master/Loon/Rewrite/Rewrite.plugin
+#!Update=2024.05.29 22:00
 
 [URL Rewrite]
 # Redirect Google Search Service
