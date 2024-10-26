@@ -15,6 +15,7 @@ CFGPT = script-name=CFGPT,update-interval=-1
 CFGPT = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/Helios12138-king/scripts/master/CFGPT.js
 #argument=icon=lasso.and.sparkles&iconerr=xmark.seal.fill&icon-color=#336FA9&iconerr-color=#D65C51
 
+-------------------------------------------------------------------------------
 #!name=面板工具｜Surge Pro
 #!desc=显示Surge的启动时间\n作者：Rabbit-Spec
 #!system=ios
@@ -30,7 +31,7 @@ SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,update-interval=1
 SurgePro_ReloadProfile = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Surge-Pro/Moore/SurgePro.js,argument=icon=&color=#f6c970
 #paperplane.circle
 
-
+-------------------------------------------------------------------------------
 #!name=面板工具｜媒体解锁检测
 #!desc=Netflix, Disney+, YouTube Unlock Detection\n作者：Rabbit-Spec
 
@@ -41,6 +42,7 @@ stream-all = type=generic, script-path=https://raw.githubusercontent.com/Helios1
 #https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Stream-All/Moore/Stream-All.js
 #https://raw.githubusercontent.com/Helios12138-king/scripts/master/stream-all.js
 
+-------------------------------------------------------------------------------
 #!name=面板工具｜网络信息
 #!desc=国内外 IP, 运营商, 位置, 策略; IPv6; 入口落地; 隐私; LAN. 自己设置对应域名的分流. https://t.me/zhetengsha\n作者：keywos xream
 #!author=@keywos @xream https://t.me/zhetengsha
@@ -54,6 +56,7 @@ stream-all = type=generic, script-path=https://raw.githubusercontent.com/Helios1
 [Panel]
 网络信息面板 = script-name=网络信息,update-interval=1,timeout=120
 
+-------------------------------------------------------------------------------
 #!name=面板工具｜联通余量(v4)
 #!desc=定时查询 与 Panel 面板\n作者：ChinaTelecomOperators
 #!arguments=定时查询:*/5 * * * *,禁用MITM:hostname
