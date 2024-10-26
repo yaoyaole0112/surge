@@ -4,6 +4,7 @@
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/startingad.png
 #!category=去除广告
 #!homepage=https://whatshub.top
+#!由whatshub.top自动维护 2024.10.26 06:49
 
 [URL Rewrite]
 https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\/list|getSplash|outing\/reqFoundNewList|outing\/reqIndex) - reject
@@ -155,7 +156,7 @@ http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 ^https?:\/\/mpcs\.suning\.com\/mpcs\/dm\/getDmInfo - reject
 ^https?:\/\/mobile-pic\.cache\.iciba\.com\/feeds_ad\/ - reject
 ^https?:\/\/mobads\.baidu\.com\/cpro\/ui\/mads.+ - reject
-^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend - reject
+^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend\/(?!v2\/platactivity.*) - reject
 ^https?:\/\/mime\.baidu\.com\/v\d\/activity\/advertisement - reject
 ^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo - reject
 ^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads\/list - reject
@@ -1395,6 +1396,8 @@ https://api.feidee.net/v1/configs/client/configs data-type=file data="https://ra
 ^https?:\/\/mmg\.aty\.sohu\.com\/pvlog? data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-img.gif"
 
 ^https?:\/\/mmg\.aty\.sohu\.com\/mqs? data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-img.gif"
+
+^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-200.txt"
 
 ^https?:\/\/mlife\.jf365\.boc\.cn\/AppPrj\/FirstPic\.do\?txnId=2PIC000001 data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-200.txt"
 
@@ -2812,6 +2815,10 @@ https://api.feidee.net/v1/configs/client/configs data-type=file data="https://ra
 
 ^https:\/\/cn-app\.narwaltech\.com\/(operate\/(cactivity\/listByResourceIds|appPosition\/listSplash)|app-user-device-server\/v\d\/user-device\/getTips) data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-200.txt"
 
+^https:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-200.txt"
+
+^https:\/\/booking\.bestwehotel\.com\/proxy\/trip-hotel-banner\/activity\/getActivityInfo data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-200.txt"
+
 ^https:\/\/bohe\.sfo-tx-shanghai-01\.saas\.sensorsdata\.cn\/api\/v2\/sfo\/user_popup_configs\? data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-dict.json"
 
 ^https:\/\/assets\.msn\.com\/service\/news\/feed\/pages\/startmhp data-type=file data="https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/reject-dict.json"
@@ -2980,6 +2987,8 @@ rrtv_json2 = type=http-response, pattern=https://api.rr.tv/v3plus/index/channel\
 rrtv_json3 = type=http-response, pattern=https://api.rr.tv/user/profile, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js, requires-body=true
 
 rrtv_json4 = type=http-response, pattern=https://api.juxingclub.com/v3plus/index/channel\?pageNum=1&position=CHANNEL_INDEX, script-path=https://github.com/ddgksf2013/Scripts/raw/master/rrtv_json.js, requires-body=true
+
+coolapk = type=http-response, pattern=https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
 UnblockURLinWeChat = type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js, requires-body=true
 
@@ -3505,13 +3514,13 @@ keepStyle3 = type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/athena\
 
 BahamutAnimeAds = type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true
 
-coolapk = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true
+coolapk2 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true
 
-coolapk2 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true
+coolapk3 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init), script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true
 
-coolapk3 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true
+coolapk4 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true
 
-coolapk4 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList), script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
+coolapk5 = type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/(feed\/(replyList|detail)|main\/indexV8|dataList), script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
 caiyun_json11 = type=http-response, pattern=^https?:\/\/api\.caiyunapp\.com\/v\d\/activity, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js, requires-body=true
 
@@ -3525,15 +3534,15 @@ rrtv_json11 = type=http-response, pattern=^https?:\/\/api.juxingclub.com\/v3plus
 
 rrtv_json12 = type=http-response, pattern=^https?:\/\/api.juxingclub.com\/app\/config\/h5NativeBar, script-path=https://github.com/ddgksf2013/Scripts/raw/master/rrtv_json.js, requires-body=true
 
-coolapk5 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\/init, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
+coolapk6 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\/init, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
-coolapk6 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\/indexV8, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
+coolapk7 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/main\/indexV8, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
-coolapk7 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/replyList, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
+coolapk8 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/replyList, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
-coolapk8 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/detail, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
+coolapk9 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/feed\/detail, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
-coolapk9 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/dataList, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
+coolapk10 = type=http-response, pattern=^https?:\/\/api.coolapk.com\/v6\/dataList, script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true
 
 soul_ads6 = type=http-response, pattern=^https?:\/\/api-user\.soulapp\.cn\/v\d\/planet\/config, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js, requires-body=true
 
@@ -3723,7 +3732,7 @@ bilibili_json13 = type=http-response, pattern=^https://app.bilibili.com/x/v2/sea
 
 weibo_json22 = type=http-response, pattern=^https://api.weibo.cn/2/!/client/light_skin, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, requires-body=true
 
-Umetrip_remove_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://kelee.one/Resource/Script/Umetrip/Umetrip_remove_ads.js, requires-body=true
+Umetrip_remove_ads = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/Umetrip_remove_ads.js, requires-body=true
 
 amdc = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amdc.js, requires-body=true
 
