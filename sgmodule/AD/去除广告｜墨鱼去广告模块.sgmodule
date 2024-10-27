@@ -6,7 +6,7 @@
 #!homepage=https://github.com/ddgksf2013
 #!tgchannel=https://t.me/ddgksf2021
 #!Repo=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule
-#!Update=2024-10-25 09:40:45
+#!Update=2024-10-27 09:45:44
 
 [URL Rewrite]
 ^https?:\/\/2024.10.21/c351/v2.0.539 - reject
