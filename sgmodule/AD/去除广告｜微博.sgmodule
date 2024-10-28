@@ -2,6 +2,7 @@
 #!desc= 过滤微博广告及去除各部分推广模块\n作者：RuCu6, zmqcherish
 #!author=RuCu6[https://github.com/RuCu6], zmqcherish[https://github.com/zmqcherish]
 #!icon=https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/weibo.png
+#!Repo=https://kelee.one/Tool/Loon/Plugin/Weibo_remove_ads.plugin
 #!category=去除广告
 #!Update=2024-10-28 10:13:51
 
