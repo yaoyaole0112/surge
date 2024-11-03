@@ -4,35 +4,45 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoDict.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id353115739
-#!tag=去广告
-#!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-09-07 23:36:24
+#!Update=2024-09-07 23:36:24
 
 [Rule]
 # 拦截HTTPDNS
-DOMAIN,httpdns.music.163.com,REJECT
-DOMAIN,httpdns.n.netease.com,REJECT
-DOMAIN,httpdns-sdk.n.netease.com,REJECT
-DOMAIN,httpdns.yunxindns.com,REJECT
-DOMAIN,lofter.httpdns.c.163.com,REJECT
-DOMAIN,music.httpdns.c.163.com,REJECT
-IP-CIDR,59.111.239.61/32,REJECT,no-resolve
-IP-CIDR,59.111.239.62/32,REJECT,no-resolve
-IP-CIDR,115.236.121.51/32,REJECT,no-resolve
-IP-CIDR,115.236.121.195/32,REJECT,no-resolve
+DOMAIN,httpdns.music.163.com,REJECT,extended-matching,pre-matching
+DOMAIN,httpdns.n.netease.com,REJECT,extended-matching,pre-matching
+DOMAIN,httpdns-sdk.n.netease.com,REJECT,extended-matching,pre-matching
+DOMAIN,httpdns.yunxindns.com,REJECT,extended-matching,pre-matching
+DOMAIN,lofter.httpdns.c.163.com,REJECT,extended-matching,pre-matching
+DOMAIN,music.httpdns.c.163.com,REJECT,extended-matching,pre-matching
+IP-CIDR,59.111.239.61/32,REJECT,no-resolve,pre-matching
+IP-CIDR,59.111.239.62/32,REJECT,no-resolve,pre-matching
+IP-CIDR,115.236.121.51/32,REJECT,no-resolve,pre-matching
+IP-CIDR,115.236.121.195/32,REJECT,no-resolve,pre-matching
 # 友盟
-DOMAIN,cnlogs.umeng.com,REJECT
-DOMAIN,errlog.umeng.com,REJECT
-DOMAIN,errnewlog.umeng.com,REJECT
-DOMAIN,ucc.umeng.com,REJECT
-DOMAIN,ulogs.umeng.com,REJECT
-DOMAIN,utoken.umeng.com,REJECT
-DOMAIN,deeplink.umeng.com,REJECT
-DOMAIN,aspect-upush.umeng.com,REJECT
-DOMAIN,plbslog.umeng.com,REJECT
-DOMAIN,log.umtrack.com,REJECT
-DOMAIN,aaid.umeng.com,REJECT
+DOMAIN,cnlogs.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,errlog.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,errnewlog.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,ucc.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,ulogs.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,utoken.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,deeplink.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,aspect-upush.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,plbslog.umeng.com,REJECT,extended-matching,pre-matching
+DOMAIN,log.umtrack.com,REJECT,extended-matching,pre-matching
+DOMAIN,aaid.umeng.com,REJECT,extended-matching,pre-matching
+
+[Body Rewrite]
+http-response-jq ^https:\/\/dict\.youdao\.com\/homepage\/toolbar\/get\? 'delpaths([["data","vipTag"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/translateTab\? 'delpaths([["data"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","popup"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","tab"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","searchSuggestList"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","newBanner"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","icon","promotionList"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","icon","iconList",1,"bubble"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","icon","iconList",2,"bubble"]])'
+http-response-jq ^https:\/\/dict\.youdao\.com\/course\/tab\/home\? 'delpaths([["data","icon","iconList",8,"bubble"]])'
 
 [Map Local]
 # 开屏广告
