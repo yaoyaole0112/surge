@@ -4,9 +4,8 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PinDuoDuo.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id1044283059
-#!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-10-19 17:18:31
+#!Update=2024-10-19 17:18:31
 
 [Rule]
 AND, ((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d,extended-matching), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
