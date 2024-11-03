@@ -3,9 +3,7 @@
 #!author=fmz200, JM for respect of Walalala
 #!icon=https://raw.githubusercontent.com/johnmillzer/Icon/main/elm.png
 #!category=去除广告
-#!tag=去广告
-#!loon_version=3.2.1(745)
-#!date=2024-10-19 19:56:07
+#!Update=2024-10-19 19:56:07
 
 [Rule]
 AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, eleme*)), REJECT
