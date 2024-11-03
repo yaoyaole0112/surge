@@ -3,16 +3,17 @@
 #!category=去除广告
 #!openUrl=https://github.com/mist-whisper/Surge/tree/master/Modules
 #!homepage=https://github.com/mist-whisper/Surge/edit/master/Modules/YouTube_remove_ads.sgmodule
-#!date=2024-07-06 20:05:57
+#!Update=2024-07-06 20:05:57
 #!arguments=屏蔽上传按钮:true,屏蔽选段按钮:true,字幕翻译语言:zh-Hans,歌词翻译语言:zh-Hans,脚本执行引擎:jsc,启用调试模式:false
 #!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
 
 [Rule]
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,googlevideo.com,extended-matching),(PROTOCOL,QUIC)),REJECT
+AND,((DOMAIN-SUFFIX,youtubei.googleapis.com,extended-matching),(PROTOCOL,QUIC)),REJECT
 
 [Map Local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
+# 使用reject-dict方法以减少开销
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="{}" status-code=200
 
 [Script]
 youtube.request = type=http-request, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js, requires-body=true, binary-body-mode=true, engine={{{脚本执行引擎}}}, max-size=-1
