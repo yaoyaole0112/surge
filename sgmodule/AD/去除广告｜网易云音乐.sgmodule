@@ -3,15 +3,15 @@
 #!author=Keywos[https://github.com/Keywos], RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/cloudmusic.png
 #!category=去除广告
-#!date=2024-10-11 01:45
+#!Update=2024-10-11 01:45
 
 [Rule]
-DOMAIN,iadmat.nosdn.127.net,REJECT
-DOMAIN,iadmatapk.nosdn.127.net,REJECT
-DOMAIN,iadmusicmat.music.126.net,REJECT
-DOMAIN,iadmusicmatvideo.music.126.net,REJECT
-DOMAIN,ipv4.music.163.com,REJECT
-DOMAIN,ipv6.music.163.com,REJECT
+DOMAIN,iadmat.nosdn.127.net,REJECT,extended-matching,pre-matching
+DOMAIN,iadmatapk.nosdn.127.net,REJECT,extended-matching,pre-matching
+DOMAIN,iadmusicmat.music.126.net,REJECT,extended-matching,pre-matching
+DOMAIN,iadmusicmatvideo.music.126.net,REJECT,extended-matching,pre-matching
+DOMAIN,ipv4.music.163.com,REJECT,extended-matching,pre-matching
+DOMAIN,ipv6.music.163.com,REJECT,extended-matching,pre-matching
 
 [Header Rewrite]
 # 新版加密通用
