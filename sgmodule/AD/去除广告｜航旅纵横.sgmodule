@@ -3,12 +3,10 @@
 #!author=Linus zhang,JM for respect of Walalala
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Umetrip.png
 #!category=去除广告
-#!tag=去广告
-#!loon_version=3.2.1(745)
-#!date=2024-09-15 20:40:34
+#!Update=2024-09-15 20:40:34
 
 [Rule]
-URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
+URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,extended-matching
 
 [URL Rewrite]
 # 开屏广告
@@ -17,6 +15,9 @@ URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/n
 ^https?:\/\/bkclient\.umetrip\.com\.cn\/gateway\/api\/umetrip\/native - reject
 # 首页 - 移除右下角广告图片
 ^http:\/\/oss\.umetrip\.com\/fs\/membership\/static\/.{21} - reject
+
+[Script]
+移除首页广告 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://kelee.one/Resource/Script/Umetrip/Umetrip_remove_ads.js
 
 [Map Local]
 ^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite data-type=text data="{}" status-code=200
