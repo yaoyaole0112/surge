@@ -4,18 +4,16 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DiDi.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id554499054
-#!tag=去广告
-#!loon_version=3.2.1(749)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-09-08 22:05:03
+#!Update=2024-10-23 09:26:43
 
 [Rule]
 # 拦截HTTPDNS
-DOMAIN,hd.xiaojukeji.com,REJECT
+DOMAIN,hd.xiaojukeji.com,REJECT,extended-matching,pre-matching
 # 拦截广告下发
-DOMAIN,gwp.xiaojukeji.com,REJECT
-AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
-AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+DOMAIN,gwp.xiaojukeji.com,REJECT,extended-matching,pre-matching
+AND,((IP-ASN,45090,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
+AND,((IP-ASN,63646,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
 
 [Map Local]
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget data-type=text data="{}" status-code=200
