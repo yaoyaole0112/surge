@@ -1,0 +1,22 @@
+#!name=去除广告｜开屏去广告
+#!desc=通过脚本去除部分APP的顽固开屏广告\n作者：blackmatrix7
+#!category=去除广告
+#!Repo=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.sgmodule
+
+[General]
+force-http-engine-hosts = %APPEND% t7z.cupid.iqiyi.com, kjp.cupid.iqiyi.com, *.didapinche.com
+
+[Script]
+爱奇艺_开屏去广告 = type=http-response, pattern=^https?:\/\/(t7z|kjp)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+嘀嗒出行_开屏去广告 = type=http-response, pattern=^https?:\/\/capis(-?\w*)?\.didapinche\.com\/ad\/cx\/startup\?, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+Fa米家_开屏去广告 = type=http-response, pattern=^https?:\/\/fmapp\.chinafamilymart\.com\.cn\/api\/app\/market\/start\/ad, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+BiliBili_开屏去广告 = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/(show|list), script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+美团外卖_开屏去广告 = type=http-response, pattern=^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo?, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+小爱音箱_开屏去广告 = type=http-response, pattern=^https?:\/\/hd\.mina\.mi\.com\/splashscreen\/alert, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+京东_开屏去广告 = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+联享家_开屏去广告 = type=http-response, pattern=^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview.fcg, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+多点_开屏去广告 = type=http-response, pattern=^https?:\/\/cmsapi\.dmall\.com\/app\/home\/homepageStartUpPic, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+轻牛健康_开屏去广告 = type=http-response, pattern=^https?:\/\/gw\.yolanda\.hk\/api\/servlets\?endpoint=banners\/show_launch_banner, script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, max-size=0
+
+[MITM]
+hostname = %APPEND% capis.didapinche.com, capis*.didapinche.com, fmapp.chinafamilymart.com.cn, app.bilibili.com, wmapi.meituan.com, hd.mina.mi.com, api.m.jd.com, mi.gdt.qq.com, cmsapi.dmall.com, gw.yolanda.hk, t7z.cupid.iqiyi.com, kjp.cupid.iqiyi.com
