@@ -1,9 +1,0 @@
-#!name=功能插件｜百度首页
-#!desc=纯净搜索\n作者：Keywos
-#!category=功能插件
-
-[Map Local]
-^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ data-type=file data="https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_index/html/index.html"
-
-[MITM]
-hostname = %APPEND% m.baidu.com, www.baidu.com
