@@ -1,0 +1,12 @@
+#!name=解锁会员｜LightRoom
+#!desc= Adobe LightRoom解锁\n作者：I-am-R-E
+#!author=I-am-R-E
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/lightroom.png
+#!category=解锁会员
+#!homepage=https://yfamily.ml
+
+[Script]
+lightroom = type=http-response, pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*, script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/lightroom.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% photos.adobe.io
