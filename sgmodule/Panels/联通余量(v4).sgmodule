@@ -1,5 +1,6 @@
 #!name=面板工具｜联通余量(v4)
 #!desc=定时查询 与 Panel 面板\n作者：ChinaTelecomOperators
+#!category=面板工具
 #!arguments=定时查询:*/5 * * * *,禁用MITM:hostname
 #!arguments-desc=定时查询：自定义Cron表达式，禁用输入 # 。\n\n禁用获取CK，禁用MITM输入 # 。
 [General]
