@@ -1,0 +1,11 @@
+#!name=面板工具｜今日天气
+#!desc=合肥市天气\n作者：deezertidal
+#!category=面板工具
+#!homepage=https://yfamily.vercel.app
+[Panel]
+天气=script-name=天气
+[Script]
+天气=type=generic,script-path=https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/tianqi.js,argument=#ffc400&cityId=101220101
+#https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/tianqi.js
+#sun.max.fill&color
+#https://raw.githubusercontent.com/Helios12138-king/scripts/master/hftoday.js
