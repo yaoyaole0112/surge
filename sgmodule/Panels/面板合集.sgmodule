@@ -1,0 +1,86 @@
+#!name=面板工具｜ChatGPT Panel
+#!desc=Chatgpt可用区域检测随可用性更换ICON\n作者：keywos wuhu_zz 整点猫咪
+# 参数说明
+# 可选参数"iconerr=xxx" 不支持chatgpt时的图标，内容为任意有效的 SF Symbol Name
+# 可选参数"icon=xxx" 支持chatgpt时的图标，内容为任意有效的 SF Symbol Name，如 bolt.horizontal.circle.fill，详细可以下载app https://apps.apple.com/cn/app/sf-symbols-browser/id1491161336
+# 可选参数"color=xxx" 当使用 icon 字段时，可传入 color 字段控制图标颜色，字段内容为颜色的 HEX 编码。如：color=#007aff
+# 如：argument=icon=lasso.and.sparkles&iconerr=xmark.seal.fill&icon-color=#D7431E
+
+
+[Panel]
+
+# GPT
+CFGPT = script-name=CFGPT,update-interval=-1
+[Script]
+CFGPT = type=generic,timeout=6,script-path=https://raw.githubusercontent.com/Helios12138-king/scripts/master/CFGPT.js
+#argument=icon=lasso.and.sparkles&iconerr=xmark.seal.fill&icon-color=#336FA9&iconerr-color=#D65C51
+
+-------------------------------------------------------------------------------
+#!name=面板工具｜Surge Pro
+#!desc=显示Surge的启动时间\n作者：Rabbit-Spec
+#!system=ios
+# 更新日期：2022.06.15
+# 版本：1.5
+
+[Panel]
+#Surge Pro
+SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,update-interval=1
+
+[Script]
+#Surge Pro
+SurgePro_ReloadProfile = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Surge-Pro/Moore/SurgePro.js,argument=icon=&color=#f6c970
+#paperplane.circle
+
+-------------------------------------------------------------------------------
+#!name=面板工具｜媒体解锁检测
+#!desc=Netflix, Disney+, YouTube Unlock Detection\n作者：Rabbit-Spec
+
+[Panel]
+stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval=3600
+[Script]
+stream-all = type=generic, script-path=https://raw.githubusercontent.com/Helios12138-king/scripts/master/stream-all.js, timeout=60
+#https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Stream-All/Moore/Stream-All.js
+#https://raw.githubusercontent.com/Helios12138-king/scripts/master/stream-all.js
+
+-------------------------------------------------------------------------------
+#!name=面板工具｜网络信息
+#!desc=国内外 IP, 运营商, 位置, 策略; IPv6; 入口落地; 隐私; LAN. 自己设置对应域名的分流. https://t.me/zhetengsha\n作者：keywos xream
+#!author=@keywos @xream https://t.me/zhetengsha
+#!arguments=DOMESTIC_IPv4:spcn,DOMESTIC_IPv6:ddnspod,LANDING_IPv4:ipapi,LANDING_IPv6:ipsb,PRIVACY:0,LAN:0,IPv6:0,MASK:0,TIMEOUT:5,ICON:globe.asia.australia,ICON-COLOR:#6699FF
+#!arguments-desc=1 为开启, 0 为关闭\n\nLAN:\n显示 LAN IP\n\nIPv6:\n显示 IPv6 地址\n\nMASK:\n打码 保护隐私\n\nDOMESTIC_IPv4:\n\n国内 IPv4 来源, 可选 spcn, cip\n\nDOMESTIC_IPv6:\n\n国内 IPv6 来源, 可选 ddnspod, neu6\n\nLANDING_IPv4:\n\n落地 IPv4 来源, 可选 ipapi, ipinfo, ipscore, ipwhois\n\nLANDING_IPv6:\n\n落地 IPv6 来源, 可选 ipsb, ident\n\nPRIVACY:\n(当落地为 ipwhois, ipinfo 时)显示 Privacy/Security 等信息\n\nTIMEOUT:\n超时设置(单位: 秒)
+#{{{ICON}}}&icon-
+[Script]
+# Panel
+网络信息 = type=generic,timeout=60,script-path=https://raw.githubusercontent.com/xream/scripts/main/surge/modules/network-info/net-lsp-x.js,argument=icon=color={{{ICON-COLOR}}}&LAN={{{LAN}}}&IPv6={{{IPv6}}}&MASK={{{MASK}}}&DOMESTIC_IPv4={{{DOMESTIC_IPv4}}}&DOMESTIC_IPv6={{{DOMESTIC_IPv6}}}&LANDING_IPv4={{{LANDING_IPv4}}}&LANDING_IPv6={{{LANDING_IPv6}}}&PRIVACY={{{PRIVACY}}}
+
+[Panel]
+网络信息面板 = script-name=网络信息,update-interval=1,timeout=120
+
+-------------------------------------------------------------------------------
+#!name=面板工具｜联通余量(v4)
+#!desc=定时查询 与 Panel 面板\n作者：ChinaTelecomOperators
+#!arguments=定时查询:*/5 * * * *,禁用MITM:hostname
+#!arguments-desc=定时查询：自定义Cron表达式，禁用输入 # 。\n\n禁用获取CK，禁用MITM输入 # 。
+[General]
+force-http-engine-hosts = %APPEND% 10010v4.com, m.client.10010.com
+
+[Script]
+# > Response
+10010v4-response = type=http-response,pattern=^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js,requires-body=true,max-size=0,timeout=120
+
+# > Cron
+10010v4-cron = type=cron,cronexp={{{定时查询}}},timeout=120,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js
+
+# > Request
+10010v4-request = type=http-request,pattern=^https?:\/\/10010v4\.com,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js,requires-body=false,max-size=0,timeout=120
+
+# > Panel
+10010v4-panel = type=generic,timeout=120,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js
+#argument=icon=arrow.up.arrow.down.circle&icon-color=#5d84f8
+
+[MITM]
+{{{禁用MITM}}} = %APPEND% 10010v4.com, m.client.10010.com
+
+[Panel]
+10010v4-panel = script-name=10010v4-panel,update-interval=300
+
