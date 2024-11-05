@@ -4,7 +4,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
 #!category=去除广告
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!Update=2024-08-14 21:37:06
+#!Update=2024-11-05 08:18:38
 
 [Rule]
 # Outlook
@@ -114,9 +114,6 @@ DOMAIN,open-pixon.ads-pixiv.net,REJECT,extended-matching,pre-matching
 
 # 小米有品
 ^https:\/\/shopapi\.io\.mi\.com\/mtop\/mf\/resource\/homePage\/pageConfig data-type=text data=" " status-code=200
-
-# 米家
-^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|myTab)\? data-type=text data="{}" status-code=200
 
 ^http:\/\/app\.zhoudamozi\.com\/ad\/.+ data-type=text data=" " status-code=200
 
