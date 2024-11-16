@@ -1,8 +1,8 @@
 #!name=去除广告｜StartUp开屏
-#!desc=StartUp去开屏广告\n作者：ddgksf2013
+#!desc=StartUp去开屏广告\n作者：ddgksf2013\n更新：2024-10-04
 #!category=去除广告
-#!Repo=https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
-#!Update=2024-10-04
+#!repo=https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf
+#!update=2024-10-04
 
 [URL Rewrite]
 # > kanlixiang
