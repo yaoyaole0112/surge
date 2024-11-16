@@ -1,9 +1,9 @@
 #!name=去除广告｜MyBlockAds
-#!desc=去广告合集, 以下app请使用单独配置文件: 高德地图,哔哩哔哩,网易云音乐,微博,YouTube,知乎\n作者：RuCu6
+#!desc=去广告合集, 以下app请使用单独配置文件: 高德地图,哔哩哔哩,网易云音乐,微博,YouTube,知乎\n作者：RuCu6\n更新：2024-10-15 10:05
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/myblockads.png
 #!category=去除广告
-#!Update=2024-10-15 10:05
+#!update=2024-10-15 10:05
 
 [Rule]
 # 12306
