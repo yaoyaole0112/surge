@@ -1,11 +1,12 @@
 #!name=去除广告丨云闪付
-#!desc=过滤银联云闪付广告，需要IPA签名注入方可使用，仅支持云闪付10.1.2版。App Store用户请勿使用此插件，务必点击下方主页链接查看详细教程。\n作者：可莉🅥
+#!desc=过滤银联云闪付广告，需要IPA签名注入方可使用，仅支持云闪付10.1.2版。\n作者：可莉🅥\n更新：2024-09-13 23:29:54
+#!App Store用户请勿使用此插件，务必点击下方主页链接查看详细教程。
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/UnionPay.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id600273928
 #!homepage=https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/34bf3aad-7872-497d-b239-198e27e8c84c
-#!Update=2024-09-13 23:29:54
+#!update=2024-09-13 23:29:54
 
 [Rule]
 # 开屏广告
