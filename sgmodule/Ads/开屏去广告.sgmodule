@@ -1,7 +1,7 @@
 #!name=去除广告｜开屏去广告
 #!desc=通过脚本去除部分APP的顽固开屏广告\n作者：blackmatrix7
 #!category=去除广告
-#!Repo=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.sgmodule
+#!repo=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.sgmodule
 
 [General]
 force-http-engine-hosts = %APPEND% t7z.cupid.iqiyi.com, kjp.cupid.iqiyi.com, *.didapinche.com
