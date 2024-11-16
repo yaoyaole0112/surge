@@ -1,10 +1,10 @@
 #!name=去除广告｜12306
-#!desc=过滤12306应用内广告及开屏广告\n作者：RuCu6
+#!desc=过滤12306应用内广告及开屏广告\n作者：RuCu6\n更新：2024-09-16 12:28:41
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/12306.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id564818797
-#!Update=2024-09-16 12:28:41
+#!update=2024-09-16 12:28:41
 
 [Rule]
 # 放行规则
