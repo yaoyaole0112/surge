@@ -1,10 +1,10 @@
 #!name=去除广告｜IT之家
-#!desc= 过滤IT之家信息流广告和文末广告，自定义移除置顶和轮播图。\n作者：Keywos,可莉🅥
+#!desc= 过滤IT之家信息流广告和文末广告，自定义移除置顶和轮播图。\n作者：Keywos,可莉🅥\n更新：2024-08-11 12:57:27
 #!category=去除广告
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
 #!openUrl=https://apps.apple.com/app/id570610859
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!Update=2024-08-11 12:57:27
+#!update=2024-08-11 12:57:27
 
 [Rule]
 URL-REGEX,^https:\/\/api\.zuihuimai\.com,REJECT
