@@ -1,11 +1,11 @@
 #!name=去除广告｜Stick Rules for Rewrite
-#!desc=常用重写规则与一些广告屏蔽，适合大部分用户，更多需求可配合其他重写规则共同使用\n作者：GeQ1an
+#!desc=常用重写规则与一些广告屏蔽，适合大部分用户，更多需求可配合其他重写规则共同使用\n作者：GeQ1an\n更新：2024-05-29 22:00
 #!author=GeQ1an
 #!icon=https://raw.githubusercontent.com/GeQ1an/Rules/master/Images/Links/Rewrite.png
 #!category=去除广告
 #!homepage=https://github.com/GeQ1an/Rules/tree/master
-#!Repo=https://raw.githubusercontent.com/GeQ1an/Rules/refs/heads/master/Loon/Rewrite/Rewrite.plugin
-#!Update=2024.05.29 22:00
+#!repo=https://raw.githubusercontent.com/GeQ1an/Rules/refs/heads/master/Loon/Rewrite/Rewrite.plugin
+#!update=2024-05-29 22:00
 
 [URL Rewrite]
 # Redirect Google Search Service
