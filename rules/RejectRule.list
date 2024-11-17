@@ -1,13 +1,15 @@
+#########################################
 # Sukka's Ruleset - Reject Domains
-# Size: 136
+# Last Updated: 2024-11-14T14:40:56.964Z
+# Size: 159
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
-# The ruleset supports AD blocking, tracking protection, privacy protection, anti-phishing, anti-mining
 # Repo: https://ruleset.skk.moe/List/non_ip/reject.conf
-# Update: 2024-10-26 07:11
-
+# The ruleset supports AD blocking, tracking protection, privacy protection, anti-phishing, anti-mining
+#########################################
 DOMAIN,this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
+DOMAIN-SUFFIX,histats.com
 DOMAIN-SUFFIX,notify6.com
 DOMAIN-SUFFIX,crazyegg.com
 DOMAIN-SUFFIX,amplitude.com
@@ -17,11 +19,19 @@ DOMAIN-SUFFIX,openx.net
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,httpdns.pro
 DOMAIN,dns.weibo.cn
+DOMAIN,doh.zjurl.cn
+DOMAIN,ttnet-dig.feishu.cn
+DOMAIN,ttnet-doh.feishu.cn
 DOMAIN-SUFFIX,net.mydays.de
 DOMAIN,dns.jd.com
+DOMAIN,httpdns.cctv.com
 DOMAIN,httpdns.baidu.com
 DOMAIN,httpsdns.baidu.com
+DOMAIN,doh.iqiyi.com
+DOMAIN,hdns.ksyun.com
 DOMAIN,httpdns.alicdn.com
+DOMAIN,httpdns.zybang.com
+DOMAIN,httpdns.bcelive.com
 DOMAIN,httpdns.meituan.com
 DOMAIN,httpdnsvip.meituan.com
 DOMAIN,httpdns-sc.aliyuncs.com
@@ -34,6 +44,8 @@ DOMAIN,httpdns.bilivideo.com
 DOMAIN,stun.smartgslb.com
 DOMAIN,httpdns.yunxindns.com
 DOMAIN,hd.xiaojukeji.com
+DOMAIN,httpdns.calorietech.com
+DOMAIN,httpdns.huaweicloud.com
 DOMAIN,httpdns-push.heytapmobile.com
 DOMAIN,httpdns-ocloud.heytapmobile.com
 DOMAIN,httpdns-euex-push.heytapmobile.com
@@ -42,18 +54,31 @@ DOMAIN,this_rule_set_is_made_by_sukkaw.skk.moe
 DOMAIN-SUFFIX,incoming-telemetry.thunderbird.net
 DOMAIN-SUFFIX,telemetry.mozilla.org
 DOMAIN-SUFFIX,telemetry-coverage.mozilla.org
+DOMAIN,httpdns-browser.platform.dbankcloud.cn
+DOMAIN,doh.ptqy.gitv.tv
+DOMAIN,httpdns.kg.qq.com
 DOMAIN,dns.weixin.qq.com
+DOMAIN,aedns.weixin.qq.com
+DOMAIN,httpdns.gslb.yy.com
 DOMAIN,httpdns-v6.gslb.yy.com
 DOMAIN,union-httpdns.gslb.yy.com
 DOMAIN,yyapp-httpdns.gslb.yy.com
 DOMAIN-SUFFIX,httpdns.c.163.com
 DOMAIN,httpdns.music.163.com
+DOMAIN,httpdns.browser.miui.com
+DOMAIN,httpdns.kwd.inkuai.com
+DOMAIN,httpdns.n.shifen.com
 DOMAIN,httpdns.c.cdnhwc2.com
+DOMAIN,httpdns1.cc.cdnhwc5.com
 DOMAIN-SUFFIX,classify-client.services.mozilla.com
 DOMAIN-SUFFIX,httpdns.n.netease.com
 DOMAIN,httpdns-sdk.n.netease.com
+DOMAIN,httpdns.danuoyi.tbcache.com
+DOMAIN,httpdns.platform.dbankcloud.com
 DOMAIN,httpdns.push.heytapmobi.com
+DOMAIN,httpdns.ocloud.heytapmobi.com
 DOMAIN,httpdns.push.oppomobile.com
+DOMAIN,httpdns.ocloud.oppomobile.com
 DOMAIN,dns.weixin.qq.com.cn
 DOMAIN-KEYWORD,.estream.
 DOMAIN-KEYWORD,jshosting
@@ -110,7 +135,6 @@ DOMAIN-WILDCARD,beacons*.gvt?.com
 DOMAIN-WILDCARD,*ad.ixigua.com
 DOMAIN-WILDCARD,tracking.*.miui.com
 DOMAIN-WILDCARD,*.tracking.*.miui.com
-AND,((USER-AGENT,bili*),(NOT,((OR,((DOMAIN-SUFFIX,bilibili.com),(DOMAIN-SUFFIX,hdslb.com),(DOMAIN-SUFFIX,wo.cn),(DOMAIN-SUFFIX,biligame.com),(DOMAIN-SUFFIX,bilivideo.com),(DOMAIN-SUFFIX,bilivideo.cn),(DOMAIN-SUFFIX,biliapi.com),(DOMAIN-SUFFIX,biliapi.net),(DOMAIN-SUFFIX,biliintl.com),(DOMAIN-SUFFIX,bstarstatic.com),(DOMAIN-SUFFIX,akamaized.net))))))
 URL-REGEX,/\d+/resolve
 URL-REGEX,/\d+/sign_d
 IP-CIDR,39.97.128.148/32,no-resolve
