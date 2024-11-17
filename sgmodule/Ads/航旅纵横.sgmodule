@@ -1,9 +1,9 @@
 #!name=去除广告｜航旅纵横
-#!desc=过滤航旅纵横广告\n作者：佚名,kelidalao,linus zhang
+#!desc=过滤航旅纵横广告\n作者：佚名\n更新：2024-09-15 20:40:34
 #!author=Linus zhang,JM for respect of Walalala
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Umetrip.png
 #!category=去除广告
-#!Update=2024-09-15 20:40:34
+#!update=2024-09-15 20:40:34
 
 [Rule]
 URL-REGEX,^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT,extended-matching
