@@ -1,11 +1,11 @@
 #!name=去除广告｜菜鸟
-#!desc= 过滤菜鸟广告\n作者：RuCu6
+#!desc= 过滤菜鸟广告\n作者：RuCu6\n更新：2024-10-31 16:04:04
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id951610982
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!Update=2024-10-31 16:04:04
+#!update=2024-10-31 16:04:04
 
 [Rule]
 AND,((URL-REGEX,"^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"Cainiao4iPhone*")),REJECT
