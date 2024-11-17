@@ -1,9 +1,9 @@
 #!name=去除广告｜美团
-#!desc= 美团 & 美团外卖去广告\n作者：fmz200
+#!desc= 美团 & 美团外卖去广告\n作者：fmz200\n更新：2024-10-19 23:06:02
 #!author=fmz200,JM for respect of Walalala
 #!icon=https://raw.githubusercontent.com/johnmillzer/Icon/main/meituan.png
 #!category=去除广告
-#!Update=2024-10-19 23:06:02
+#!update=2024-10-19 23:06:02
 
 [URL Rewrite]
 #首页右下角广告
