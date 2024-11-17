@@ -1,11 +1,11 @@
 #!name=去除广告｜网易有道词典
-#!desc=移除开屏广告、弹窗广告、横幅广告、信息流广告、旧版翻译页面广告及搜索填充词。\n作者：可莉🅥
+#!desc=移除开屏广告、弹窗广告、横幅广告、信息流广告、旧版翻译页面广告及搜索填充词。\n作者：可莉🅥\n更新：2024-09-07 23:36:24
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YoudaoDict.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id353115739
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!Update=2024-09-07 23:36:24
+#!update=2024-09-07 23:36:24
 
 [Rule]
 # 拦截HTTPDNS
