@@ -8,8 +8,8 @@
 force-http-engine-hosts = %APPEND% :8000
 
 [Rule]
-# >屏蔽QUIC
-AND,((OR,((PROTOCOL,QUIC), (PROTOCOL,UDP))), (DEST-PORT,443)),REJECT-DROP
+# 禁用QUIC
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
 
 #>菜鸟
 AND,((URL-REGEX,^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch,extended-matching), (USER-AGENT,Cainiao4iPhone*)),REJECT
@@ -36,12 +36,13 @@ DOMAIN,youku-acs.m.taobao.com,REJECT,extended-matching,pre-matching
 #>12306
 DOMAIN,ad.12306.cn,DIRECT
 
-#>阿里巴巴
-DOMAIN,dns.alidns.com,REJECT,extended-matching
-DOMAIN,ems.youku.com,REJECT,extended-matching
-DOMAIN,hudong.alicdn.com,REJECT,extended-matching
-DOMAIN,ossgw.alicdn.com,REJECT,extended-matching
-DOMAIN-SUFFIX,ut.taobao.com,REJECT,extended-matching
+#>淘宝
+DOMAIN,adashx.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN,ossgw.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,ems.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,hudong.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,h-adashx.ut.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN,ut.taobao.com,REJECT,extended-matching,pre-matching
 
 #>阿里云盘
 IP-CIDR,203.107.1.1/24,REJECT,no-resolve
@@ -79,12 +80,6 @@ DOMAIN-KEYWORD,httpdns-,REJECT,extended-matching,pre-matching
 
 #>建设银行
 DOMAIN-KEYWORD,adv.ccb.com,REJECT,extended-matching,pre-matching
-
-#>京东
-DOMAIN,dns.jd.com,REJECT,extended-matching,pre-matching
-IP-CIDR,101.124.19.122/32,REJECT,no-resolve
-IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
-URL-REGEX,^http:\/\/\w{32}\.jddebug\.com\/diagnose\?,REJECT,extended-matching
 
 #>芒果TV
 DOMAIN,credits.bz.mgtv.com,REJECT,extended-matching,pre-matching
@@ -268,22 +263,22 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? 'delpa
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
 
-#>阿里云盘 //*api.alipan.com, member.alipan.com
-^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200
-^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200
-
-#>淘宝 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) data-type=text data="{}" status-code=200
+#>淘宝
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
-^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jpg|png)_(?:1\d{3}|9\d{2})x(?:1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+
+#>阿里云盘 //*api.alipan.com, member.alipan.com
+^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200
 
 #>百度云 //pan.baidu.com
 ^https:\/\/pan\.baidu\.com\/(?:act\/|aipic\/|aisearch\/|api\/getsyscfg\?|rest\/) data-type=text data="{}" status-code=200
@@ -291,9 +286,6 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? 'delpa
 #>豆瓣 //api.douban.com, img3.doubanio.com, qnmob3.doubanio.com
 ^https:\/\/api\.douban\.com\/v2\/app_ads\/splash\w+ data-type=text data="{}" status-code=200
 ^https:\/\/(?:img|qnmob)3\.doubanio\.com\/view\/dale-online\/dale_ad\/public\/\w+ data-type=text data="{}" status-code=200
-
-#>京东 //api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:searchBoxWord|stationPullService|uniformRecommend[06]) data-type=text data="{}" status-code=200
 
 #>交管12123 //gab.122.gov.cn
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver data-type=text data="{}" status-code=200
@@ -310,10 +302,6 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? 'delpa
 
 #>微信 //mp.weixin.qq.com
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) data-type=text data="{}" status-code=200
-
-#>小米商城 //api.m.mi.com, shop-api.retail.mi.com
-^https:\/\/api\.m\.mi\.com\/(?:v1\/(?:app\/popup_info|home\/page_feed|misearch\/search_input)|v2\/search\/search_default) data-type=text data="{}" status-code=200
-^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/(?:rec\/merge\/|skywheel\/mishop\/splash) data-type=text data="{}" status-code=200
 
 #>米家 //home.mi.com
 ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(?:banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200
@@ -384,13 +372,6 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? 'delpa
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ data-type=text data="{}" status-code=200
 ^https:\/\/h5\.m\.goofish\.com\/wow\/moyu\/moyu-project\/[\w-]*search[\w-]*\/pages\/ data-type=text data=" " status-code=200
 
-#>途虎养车
-^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-scene-marketing-service\/api\/scene\/queryScheme data-type=text data="{}" status-code=200
-^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-push-message-box\/banner\/cms\/getIndexBanner data-type=text data="{}" status-code=200
-^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getAutoSuperConfig data-type=text data="{}" status-code=200
-^https:\/\/mkt-gateway\.tuhu\.cn\/mkt-cms\/circle\/recommend\/v3 data-type=text data="{}" status-code=200
-^https:\/\/mkt-gateway\.tuhu\.cn\/mlp-product-search-api\/search\/helper\/defaultAndHotWord data-type=text data="{}" status-code=200
-
 #>Keep
 ^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list data-type=text data="{}" status-code=200
 ^https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v1\/ad data-type=text data="{}" status-code=200
@@ -409,118 +390,104 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? 'delpa
 
 [Script]
 #>菜鸟
-菜鸟 = type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js, timeout=60
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true
-菜鸟 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn, script-path=https://raw.Ananaskop.com/Scripts/Cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.Ananaskop.com/Scripts/Cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.Ananaskop.com/Scripts/Cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.Ananaskop.com/Scripts/Cainiao.js, requires-body=true
+菜鸟 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://raw.Ananaskop.com/Scripts/Cainiao.js, requires-body=true
+
+#>淘宝 //acs.m.taobao.com,heic.alicdn.com,guide-acs.m.taobao.com,poplayer.template.alibaba.com
+淘宝 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://raw.ananaskop.com/Scripts/Taobao.js, requires-body=true
+淘宝 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://raw.ananaskop.com/Scripts/Taobao.js, requires-body=true
 
 #>12306 //ad.12306.cn, mobile.12306.cn
-12306 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/12306.js, requires-body=true
-12306 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js
+12306 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.Ananaskop.com/Scripts/12306_splashscreen.js, requires-body=true
+12306 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.Ananaskop.com/Scripts/12306.js
 
 #>阿里云盘 //*api.alipan.com, member.alipan.com
-阿里云盘 = type=http-response, pattern=^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(?:news|widgets), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/adrive.js, requires-body=true
-阿里云盘 = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/adrive.js, requires-body=true
-
-#>淘宝 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-淘宝 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/myBlockAds.js, requires-body=true
-淘宝 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/myBlockAds.js, requires-body=true
-
-#>京东 //api.m.jd.com
-京东 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/jingdong.js, requires-body=true
-
-#>小米商城 //api.m.mi.com, shop-api.retail.mi.com
-小米商城 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/(?:app\/start|order\/expressView), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/myBlockAds.js, requires-body=true
-
-#>中国农业银行 //mobilepaas.abchina.com.cn
-中国农业银行 = type=http-request, pattern=^https:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/header.js
+阿里云盘 = type=http-response, pattern=^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(?:news|widgets), script-path=https://raw.Ananaskop.com/Scripts/Adrive.js, requires-body=true
+阿里云盘 = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://raw.Ananaskop.com/Scripts/Adrive.js, requires-body=true
 
 #>虎扑 //*.hupu.com
-虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
-虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
-虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
-虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/HP.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/fairy\.mobileapi\.hupu\.com\/mang\/preview\/banners, script-path=https://raw.Ananaskop.com/Scripts/Hupu.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/bbs\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bbsallapi\/lego\/data, script-path=https://raw.Ananaskop.com/Scripts/Hupu.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/buffer\/hotList, script-path=https://raw.Ananaskop.com/Scripts/Hupu.js, requires-body=true
+虎扑 = type=http-response, pattern=^https:\/\/games\.mobileapi\.hupu\.com\/\d\/\d\.\d\.\d+\/bplapi\/user\/v1\/more, script-path=https://raw.Ananaskop.com/Scripts/Hupu.js, requires-body=true
 
 #>拼多多 //api.pinduoduo.com, api.yangkeduo.com
-拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Pinduoduo.js, requires-body=true
+拼多多 = type=http-response, pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?, script-path=https://raw.Ananaskop.com/Scripts/Pinduoduo.js, requires-body=true
 
 #>航旅纵横 //114.115.217.129, home.umetrip.com
-航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Umetrip.js, requires-body=true
+航旅纵横 = type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.Ananaskop.com/Scripts/Umetrip.js, requires-body=true
 
 #>小红书 //edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
-小红书 = type=http-response, pattern=^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config, script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?, script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?, script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?, script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed), script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
+小红书 = type=http-response, pattern=^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save), script-path=https://raw.Ananaskop.com/Scripts/Xiaohongshu.js, requires-body=true
 
 #>高德地图 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
-高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan), script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location), script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page), script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
+高德地图 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://raw.Ananaskop.com/Scripts/Amap.js, requires-body=true
 
 #>滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
-滴滴出行 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true
-滴滴出行 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true
-滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true
-滴滴出行 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true
-滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Didichuxing.js, requires-body=true
+滴滴出行 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://raw.Ananaskop.com/Scripts/Didi.js, requires-body=true
+滴滴出行 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://raw.Ananaskop.com/Scripts/Didi.js, requires-body=true
+滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://raw.Ananaskop.com/Scripts/Didi.js, requires-body=true
+滴滴出行 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://raw.Ananaskop.com/Scripts/Didi.js, requires-body=true
+滴滴出行 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout, script-path=https://raw.Ananaskop.com/Scripts/Didi.js, requires-body=true
 
 #>彩云天气 //api.caiyunapp.com, *.cyapi.cn
-彩云天气 = type=http-response, pattern=^https:\/\/api\.caiyunapp\.com\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true
-彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true
-彩云天气 = type=http-response, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, requires-body=true
-彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/caiyun.js, timeout=60
+彩云天气 = type=http-response, pattern=^https:\/\/api\.caiyunapp\.com\/v1\/activity\?, script-path=https://raw.Ananaskop.com/Scripts/Caiyun.js, requires-body=true
+彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(api\/v1\/user_detail|p\/v1\/vip_info|v2\/user), script-path=https://raw.Ananaskop.com/Scripts/Caiyun.js, requires-body=true
+彩云天气 = type=http-response, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.Ananaskop.com/Scripts/Caiyun.js, requires-body=true
+彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.Ananaskop.com/Scripts/Caiyun.js, timeout=60
 
 #>闲鱼 //*.m.goofish.com
-闲鱼 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true
-闲鱼 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true
-闲鱼 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true
-闲鱼 = type=http-response, pattern=^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/xianyu.js, requires-body=true
-
-#>途虎养车 //mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn
-途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true
-途虎养车 = type=http-response, pattern=^https:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/TH.js, requires-body=true
+闲鱼 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/, script-path=https://raw.Ananaskop.com/Scripts/Xianyu.js, requires-body=true
+闲鱼 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://raw.Ananaskop.com/Scripts/Xianyu.js, requires-body=true
+闲鱼 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/, script-path=https://raw.Ananaskop.com/Scripts/Xianyu.js, requires-body=true
+闲鱼 = type=http-response, pattern=^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/, script-path=https://raw.Ananaskop.com/Scripts/Xianyu.js, requires-body=true
 
 #>百度跳转 //m.baidu.com, www.baidu.com, zhidao.baidu.com
-百度跳转 = type=http-response, pattern=^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/baidu-index.js, requires-body=true
+百度跳转 = type=http-response, pattern=^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$, script-path=https://raw.Ananaskop.com/Scripts/Baidu_index.js, requires-body=true
 
 #>Keep //kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
-Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v3\/basic, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Keep.js, requires-body=true
+Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v3\/basic, script-path=https://raw.Ananaskop.com/Scripts/Keep.js, requires-body=true
 
 #>哔哩哔哩 //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
-哔哩哔哩 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\?, script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
-哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?), script-path=https://raw.githubusercontent.com/Ananaskop/Profile/main/Scripts/Bilibili_remove_ads.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus, script-path=https://raw.Ananaskop.com/Scripts/Bilibili_helper_beta.js, requires-body=true, binary-body-mode=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?, script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index(\/story)?\?, script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?, script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?), script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\?, script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
+哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?), script-path=https://raw.Ananaskop.com/Scripts/Bilibili.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% cn-acs.m.cainiao.com, guide-acs.m.taobao.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, api.m.jd.com, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, mkt-gateway.tuhu.cn, cl-gateway.tuhu.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
+hostname = %APPEND% cn-acs.m.cainiao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, pan.baidu.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, image.mybank.icbc.com.cn, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, home.mi.com, wallet.95516.com, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
