@@ -1,11 +1,11 @@
 #!name=去除广告｜淘宝
-#!desc= 过滤淘宝开屏广告\n作者：RuCu6\n更新：2024-01-25 18:00:54
+#!desc= 过滤淘宝开屏广告\n作者：RuCu6\n更新：2024-11-28 00:00:00
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Taobao.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id387682726
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-01-25 18:00:54
+#!update=2024-11-28 00:00:00
 
 [Rule]
 DOMAIN,adashx.m.taobao.com,REJECT,extended-matching,pre-matching
@@ -16,7 +16,7 @@ DOMAIN,h-adashx.ut.taobao.com,REJECT,extended-matching,pre-matching
 DOMAIN,ut.taobao.com,REJECT,extended-matching,pre-matching
 
 [Map Local]
-# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# 阿里巴巴 //acs.m.taobao.com,heic.alicdn.com,guide-acs.m.taobao.com,poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
 
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
