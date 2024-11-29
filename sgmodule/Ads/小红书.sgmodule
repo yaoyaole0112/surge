@@ -1,11 +1,11 @@
 #!name=去除广告｜小红书
-#!desc=过滤信息流推广，移除图片及视频水印，如有异常，请先清除缓存再尝试。\n作者：RuCu6, fmz200\n更新：2024-11-06 16:05:55
+#!desc=过滤信息流推广，移除图片及视频水印，如有异常，请先清除缓存再尝试。\n作者：RuCu6, fmz200\n更新：2024-11-28 00:00:00
 #!author=RuCu6[https://github.com/RuCu6], fmz200[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RedPaper.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id741292507
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-06 16:05:55
+#!update=2024-11-28 00:00:00
 
 [Rule]
 AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
