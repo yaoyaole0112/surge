@@ -1,11 +1,11 @@
 #!name=去除广告｜滴滴出行
-#!desc= 移除开屏广告、精简首页、底栏和我的页面。\n作者：ZenmoFeiShi, 可莉🅥\n更新：2024-11-05 09:46:58
+#!desc= 移除开屏广告、精简首页、底栏和我的页面。\n作者：ZenmoFeiShi, 可莉🅥\n更新：2024-11-28 00:00:00
 #!author=ZenmoFeiShi[https://github.com/ZenmoFeiShi], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DiDi.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id554499054
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-05 09:46:58
+#!update=2024-11-28 00:00:00
 
 [Rule]
 # 拦截HTTPDNS
