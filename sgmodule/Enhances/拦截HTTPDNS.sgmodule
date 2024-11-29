@@ -4,7 +4,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
 #!category=功能插件
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-05 10:03:15
+#!update=2024-11-13 15:00:36
 
 [Rule]
 # YY语音
@@ -138,8 +138,6 @@ URL-REGEX,"^http:\/\/180\.76\.76\.112\/v\d\/",REJECT,extended-matching
 URL-REGEX,"^http:\/\/180\.76\.76\.112\/v\d\/resolve",REJECT,extended-matching
 URL-REGEX,"^http:\/\/180\.76\.76\.220\/v\d\/resolve",REJECT,extended-matching
 IP-CIDR,186.76.76.200/32,REJECT,no-resolve,pre-matching
-# 华为
-DOMAIN,httpdns.c.cdnhwc2.com,REJECT,extended-matching,pre-matching
 # 欢太
 DOMAIN,httpdns.ocloud.heytapmobi.com,REJECT,extended-matching,pre-matching
 DOMAIN,httpdns.push.heytapmobi.com,REJECT,extended-matching,pre-matching
@@ -169,6 +167,7 @@ DOMAIN,httpdns.ocloud.oppomobile.com,REJECT,extended-matching,pre-matching
 DOMAIN,kuaishou.httpdns.pro,REJECT,extended-matching,pre-matching
 DOMAIN,httpdns.kwd.inkuai.com,REJECT,extended-matching,pre-matching
 DOMAIN,apidns.kwd.inkuai.com,REJECT,extended-matching,pre-matching
+DOMAIN,apidns-js.kwd.inkuai.com,REJECT,extended-matching,pre-matching
 # 美团
 DOMAIN,httpdns.meituan.com,REJECT,extended-matching,pre-matching
 URL-REGEX,"^http:\/\/103\.37\.155\.60\/fetch",REJECT,extended-matching
@@ -210,6 +209,8 @@ IP-CIDR,118.89.204.198/23,REJECT,no-resolve,pre-matching
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve,pre-matching
 # 青桔科技
 DOMAIN,hd.xiaojukeji.com,REJECT,extended-matching,pre-matching
+# 作业帮
+DOMAIN,httpdns.zybang.com,REJECT,extended-matching,pre-matching
 
 [URL Rewrite]
 # 腾讯DNS
