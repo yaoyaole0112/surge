@@ -1,27 +1,17 @@
 #!name=去除广告｜IT之家
-#!desc= 过滤IT之家信息流广告和文末广告，自定义移除置顶和轮播图。\n作者：Keywos,可莉🅥\n更新：2024-08-11 12:57:27
+#!desc= 过滤IT之家信息流广告和文末广告，自定义移除置顶和轮播图。\n作者：Keywos,可莉🅥\n更新：2024-11-28 00:00:00
 #!category=去除广告
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
 #!openUrl=https://apps.apple.com/app/id570610859
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-08-11 12:57:27
-
-[Rule]
-URL-REGEX,^https:\/\/api\.zuihuimai\.com,REJECT
+#!update=2024-11-28 00:00:00
 
 [URL Rewrite]
 ^https?:\/\/api\.zuihuimai\.com\/static\/.*\/hongbao - reject
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
 
 [Script]
-# > IT之家 去广告
-页面广告 = type=http-response, pattern=^https:\/\/m\.ithome\.com\/api\/news\/newslistpageget, script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js, requires-body=true, max-size=0, script-update-interval=0
-
-列表广告 = type=http-response, pattern=^https:\/\/api\.ithome\.com\/json\/(listpage|newslist)\/news, script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js, requires-body=true, max-size=0, script-update-interval=0
-
-轮播广告 = type=http-response, pattern=^https:\/\/api\.ithome\.com\/json\/slide\/index, script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js, requires-body=true, max-size=0, script-update-interval=0
-
 IT之家去广告 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(?:news\/index|topmenu\/getfeeds\?|api\/douyin\/GetLiveInfo), script-path=https://kelee.one/Resource/Script/IThome/IThome_remove_ads.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% api.ithome, m.ithome.com, napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
+hostname = %APPEND% napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
