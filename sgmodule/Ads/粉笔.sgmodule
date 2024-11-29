@@ -1,11 +1,11 @@
 #!name=去除广告｜粉笔
-#!desc=移除开屏广告、首页弹窗和悬浮窗。\n作者：可莉🅥\n更新：2024-07-11 00:20:34
+#!desc=移除开屏广告、首页弹窗和悬浮窗。\n作者：可莉🅥\n更新：2024-11-28 00:00:00
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/FenBi.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id584660358
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-07-11 00:20:34
+#!update=2024-11-28 00:00:00
 
 [Map Local]
 # 开屏广告
