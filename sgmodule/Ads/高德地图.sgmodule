@@ -1,14 +1,14 @@
 #!name=去除广告｜高德地图
-#!desc=过滤高德地图开屏广告、各页面推广，精简我的页面。\n作者：RuCu6,kokoryh\n更新：2024-11-07 11:03:15
+#!desc=过滤高德地图开屏广告、各页面推广，精简我的页面。\n作者：RuCu6,kokoryh\n更新：2024-11-28 00:00:00
 #!author=RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Amap.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id461703208
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-07 11:03:15
+#!update=2024-11-28 00:00:00
 
 [Rule]
-AND,((URL-REGEX,"^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"AMapiPhone*")),REJECT
+AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"AMapiPhone*")),REJECT
 DOMAIN,amap-aos-info-nogw.amap.com,REJECT,extended-matching,pre-matching
 DOMAIN,free-aos-cdn-image.amap.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,v.smtcdns.com,REJECT,extended-matching,pre-matching
