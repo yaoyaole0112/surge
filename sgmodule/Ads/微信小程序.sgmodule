@@ -1,11 +1,11 @@
 #!name=去除广告｜微信小程序
-#!desc= 收录常用小程序的去广告，作者署名在插件内。\n作者：可莉🅥\n更新：2024-11-15 14:27:59
+#!desc= 收录常用小程序的去广告，作者署名在插件内。\n作者：可莉🅥\n更新：2024-11-28 00:00:00
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/WeixinMiniPrograms.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id414478124
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-15 14:27:59
+#!update=2024-11-28 00:00:00
 
 [Rule]
 # 微信小程序通用规则
@@ -48,7 +48,7 @@ DOMAIN,e.jparking.cn,REJECT,extended-matching,pre-matching
 ^https:\/\/fscdn\.zto\.com\/fs1 - reject
 # 怪兽充电 aag.enmonster.com
 ^https:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin - reject
-# 小兔充充 ad.xiaotucc.com, mapi.xiaotucc.com
+# 小兔充充 ad.xiaotucc.com,mapi.xiaotucc.com
 ^https:\/\/ad\.xiaotucc\.com\/advert - reject
 # U净 api-marketing.zhinengxiyifang.cn
 ^https:\/\/api-marketing\.zhinengxiyifang\.cn\/api\/v2\/cloudcode\/wechat\/bid - reject
@@ -112,7 +112,7 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 
 ^https:\/\/apiproxy\.zuche\.com\/resource\/carrctapi\/home\/page\/advertising data-type=text data="{}" status-code=200
 
-# 闪送 miniprogram.ishansong.com, ads.ishansong.com
+# 闪送 miniprogram.ishansong.com,ads.ishansong.com
 ^https:\/\/miniprogram\.ishansong\.com\/cms\/faq\/query data-type=text data="{}" status-code=200
 
 ^https:\/\/ads\.ishansong\.com\/advert data-type=text data="{}" status-code=200
@@ -138,7 +138,7 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 # 快狗打车搬家 suyun-user.daojia.com
 ^https:\/\/suyun-guest\.daojia\.com\/api\/kuaigou\/banjia\/review data-type=text data="{}" status-code=200
 
-# 货拉拉 qapi.huolala.cn, appuser-static.huolala.cn
+# 货拉拉 qapi.huolala.cn,appuser-static.huolala.cn
 ^https:\/\/qapi\.huolala\.cn\/ads data-type=text data="{}" status-code=200
 
 ^https:\/\/qapi\.huolala\.cn\/home_new_user data-type=text data="{}" status-code=200
@@ -155,7 +155,7 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 # 上海地铁Metro大都会乘车码 dock.tenchii.com
 ^https:\/\/dock\.tenchii\.com\/DockCard\/api\/mini\/card\/list data-type=text data="{}" status-code=200
 
-# 申通快递 customer-app.sto.cn, sto-customer-app.oss-cn-shanghai.aliyuncs.co
+# 申通快递 customer-app.sto.cn,sto-customer-app.oss-cn-shanghai.aliyuncs.co
 ^https:\/\/customer-app\.sto\.cn\/api\/app\/banner\/banner data-type=text data="{}" status-code=200
 
 ^https:\/\/sto-customer-app\.oss-cn-shanghai\.aliyuncs\.com\/images data-type=text data="{}" status-code=200
@@ -191,7 +191,7 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 # 锦江酒店 wxapp.bestwehotel.com
 ^https:\/\/wxapp\.bestwehotel\.com\/gw3\/app-mini\/trip-hotel-banner\/activity\/getActivityInfo data-type=text data="{}" status-code=200
 
-# 首旅如家 app.homeinns.com, wx.bthhotels.com
+# 首旅如家 app.homeinns.com,wx.bthhotels.com
 ^https:\/\/wx\.bthhotels\.com\/miniapp\/weixin\/v1\/home\/index_banner data-type=text data="{}" status-code=200
 
 ^https:\/\/app\.homeinns\.com\/api\/v6\/indexs data-type=text data="{}" status-code=200
@@ -210,7 +210,7 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 
 ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.mallRecommend data-type=text data="{}" status-code=200
 
-# 罗森点点 lawsonapi.yorentown.com, plt.yorentown.com
+# 罗森点点 lawsonapi.yorentown.com,plt.yorentown.com
 ^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/mina\/systemSetting data-type=text data="{}" status-code=200
 
 ^https:\/\/plt\.yorentown\.com\/pltapp\/v1\/banner data-type=text data="{}" status-code=200
@@ -221,10 +221,10 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 # 茶百道 cbd-gateway-service-applets.hualala.com
 ^https:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList data-type=text data="{}" status-code=200
 
-# 一点点 cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com
+# 一点点 cappapi.alittle-tea.com,alittle-tea.oss-cn-shanghai.aliyuncs.com
 ^https:\/\/alittle-tea\.oss-cn-shanghai\.aliyuncs\.com\/images\/platform\/alittle data-type=text data="{}" status-code=200
 
-# M Stand api.prod.dj.mstand.cn, api.prod.dj.mstand.cn
+# M Stand api.prod.dj.mstand.cn,api.prod.dj.mstand.cn
 ^https:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/app\/mdm\/index\/listAdv\?types data-type=text data="{}" status-code=200
 
 # 首汽约车 gw-passenger-wap.01zhuanche.com
@@ -290,13 +290,13 @@ http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPor
 
 ^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList data-type=text data="{}" status-code=200
 
-# 滴滴代驾 daijia.kuaidadi.com, as.xiaojukeji.com
+# 滴滴代驾 daijia.kuaidadi.com,as.xiaojukeji.com
 ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name= data-type=text data="{}" status-code=200
 
 ^https:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe data-type=text data="{}" status-code=200
 
 [Script]
-# 企迈点单系统 webapi.qmai.cn, images.qmai.cn
+# 企迈点单系统 webapi.qmai.cn,images.qmai.cn
 企迈点单系统去广告 = type=http-response, pattern=^https:\/\/webapi\.qmai\.cn\/web\/catering\/design\/homePage-Config, script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/kff/kff.js, requires-body=true
 
 # EMS中国邮政物流速递 @TEAXS ump.ems.com.cn
@@ -308,7 +308,7 @@ EMS中国邮政物流速递去广告 = type=http-response, pattern=^https:\/\/um
 # 全家微会员 minifm.maxxipoint.com
 全家微会员去广告 = type=http-response, pattern=^https:\/\/minifm\.maxxipoint\.com\/banner\/list, script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/FamilyMart/FamilyMart.js, requires-body=true
 
-# 罗森点点 lawsonapi.yorentown.com, plt.yorentown.com
+# 罗森点点 lawsonapi.yorentown.com,plt.yorentown.com
 罗森点点去广告 = type=http-response, pattern=^https:\/\/lawsonapi\.yorentown\.com\/area\/sh-lawson\/app\/v1\/home, script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/lawson/lawson.js, requires-body=true
 
 # 茶颜悦色 miniapp.sexytea2013.com
@@ -320,10 +320,10 @@ COCO点单去广告 = type=http-response, pattern=^https:\/\/coco-com\.e\.veryst
 # 滴滴青桔 htwkop.xiaojukeji.com
 滴滴青桔去广告 = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig, script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/qingju/qingju.js, requires-body=true
 
-# 一点点+ cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com
+# 一点点+ cappapi.alittle-tea.com,alittle-tea.oss-cn-shanghai.aliyuncs.com
 一点点+去广告 = type=http-response, pattern=^https:\/\/cappapi\.alittle-tea\.com\/open\?method=catering\.set\.ad, script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/alittle-tea/alittle-tea.js, requires-body=true
 
-# M Stand api.prod.dj.mstand.cn, api.prod.dj.mstand.cn
+# M Stand api.prod.dj.mstand.cn,api.prod.dj.mstand.cn
 M Stand去广告 = type=http-response, pattern=^https:\/\/api\.prod\.dj\.mstand\.cn\/scrm\/mini\/app\/index\/info, script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/M_Stand/M_Stand.js, requires-body=true
 
 # T3出行 passenger.t3go.cn
@@ -333,4 +333,4 @@ T3出行去广告 = type=http-response, pattern=^https:\/\/passenger\.t3go\.cn\/
 古茗去广告 = type=http-response, pattern=^https:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front), script-path=https://kelee.one/Resource/Script/WexinMiniPrograms/ming/ming.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% 3pp.starbucks.com.cn, aag.enmonster.com, activity.yonghuivip.com, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, coco-com.e.verystar.net, creditcardapp.bankcomm.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, file.dian.so, flow.dmall.com, fscdn.zto.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, htwkop.xiaojukeji.com, images.qmai.cn, lawsonapi.yorentown.com, m.ctrip.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mxsa.mxbc.net, newton.gumingnc.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, qapi.huolala.cn, r2.gzyct.com, res.hongyibo.com.cn, res.pizzahut.com.cn, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, vod-movie.maoyan.com, webapi.qmai.cn, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, www.deppon.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com, mcsp.cloudpnr.com, api.szbgcx.cn, rms.meituan.com
+hostname = %APPEND% 3pp.starbucks.com.cn, aag.enmonster.com, activity.yonghuivip.com, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, coco-com.e.verystar.net, creditcardapp.bankcomm.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, file.dian.so, flow.dmall.com, fscdn.zto.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, htwkop.xiaojukeji.com, images.qmai.cn, lawsonapi.yorentown.com, m.ctrip.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mxsa.mxbc.net, newton.gumingnc.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, qapi.huolala.cn, r2.gzyct.com, res.hongyibo.com.cn, res.pizzahut.com.cn, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, vod-movie.maoyan.com, webapi.qmai.cn, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, www.deppon.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com, mcsp.cloudpnr.com, api.szb
