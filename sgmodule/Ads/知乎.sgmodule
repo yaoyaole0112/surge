@@ -1,11 +1,11 @@
 #!name=去除广告｜知乎
-#!desc=移除各部分广告，移除知乎安全中心跳转。\n作者：RuCu6,blackmatrix7\n更新：2024-11-04 13:57:06
+#!desc=移除各部分广告，移除知乎安全中心跳转。\n作者：RuCu6,blackmatrix7\n更新：2024-11-28 00:00:00
 #!author=RuCu6[https://github.com/RuCu6], blackmatrix7[https://github.com/blackmatrix7]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Zhihu.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id432274380
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-04 13:57:06
+#!update=2024-11-28 00:00:00
 
 [Rule]
 # 知乎
@@ -22,7 +22,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve,pre-matching
 [URL Rewrite]
 ^https:\/\/api\.zhihu\.com\/unlimited\/go\/my_card - reject
 ^https:\/\/www\.zhihu\.com\/appview\/v3\/zhmore - reject
-^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) http://$1 302
+^https:\/\/link\.zhihu\.com\/\?target=(?:https?)?(?:%3A|:)?(?:\/\/|%2F%2F)?(.*) http://$1 307
 
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? 'delpaths([["activity_banner"]])'
@@ -67,7 +67,7 @@ http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? "recomme
 
 ^https:\/\/appcloud2\.zhihu\.com\/v3\/resource\?group_name=mp data-type=text data="{}" status-code=200
 
-# 网页版去广告 //www.zhihu.com, zhuanlan.zhihu.com
+# 网页版去广告 //www.zhihu.com,zhuanlan.zhihu.com
 ^https:\/\/api\.zhihu\.com\/distribute\/rhea\/qa_ad_card\/h5\/recommendation\? data-type=text data="{}" status-code=200
 
 ^https:\/\/www\.zhihu\.com\/api\/v4\/hot_recommendation data-type=text data="{}" status-code=200
@@ -103,6 +103,5 @@ http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? "recomme
 
 拦截服务器推送配置 config all = type=http-response, pattern=^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/zhihu\/config\/all\?, script-path=https://kelee.one/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body=true
 
-
 [MITM]
-hostname = %APPEND% api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com, *.zhihu.com
+hostname = %APPEND% *.zhihu.com
