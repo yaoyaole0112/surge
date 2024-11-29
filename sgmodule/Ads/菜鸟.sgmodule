@@ -1,14 +1,14 @@
 #!name=去除广告｜菜鸟
-#!desc= 过滤菜鸟广告\n作者：RuCu6\n更新：2024-10-31 16:04:04
+#!desc= 过滤菜鸟广告\n作者：RuCu6\n更新：2024-11-28 00:00:00
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Cainiao.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id951610982
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-10-31 16:04:04
+#!update=2024-11-28 00:00:00
 
 [Rule]
-AND,((URL-REGEX,"^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"Cainiao4iPhone*")),REJECT
+AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"Cainiao4iPhone*")),REJECT
 DOMAIN,adsmind.ugdtimg.com,REJECT,extended-matching,pre-matching
 DOMAIN,amdc.m.youku.com,REJECT,extended-matching,pre-matching
 DOMAIN,apiv4-iyes.youku.com,REJECT,extended-matching,pre-matching
@@ -16,7 +16,7 @@ DOMAIN,httpdns.alicdn.com,REJECT,extended-matching,pre-matching
 DOMAIN,huichuan-mc.sm.cn,REJECT,extended-matching,pre-matching
 DOMAIN,huichuan.sm.cn,REJECT,extended-matching,pre-matching
 DOMAIN,iyes.youku.com,REJECT,extended-matching,pre-matching
-# DOMAIN, m-vali.cp31.ott.cibntv.net, REJECT
+# DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT
 DOMAIN,mc.atm.youku.com,REJECT,extended-matching,pre-matching
 DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
 DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
