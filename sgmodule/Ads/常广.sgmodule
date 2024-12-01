@@ -1,7 +1,10 @@
 #!name=去除广告丨常广
-#!desc=去除常用软件广告,仅做整理整合\n作者：RuCu6，ZenmoFeiShi，可莉🅥\n更新：2024-11-29 21:04:53
+#!desc=去除常用软件广告,仅做整理整合\n作者：RuCu6，ZenmoFeiShi，可莉🅥\n更新：2024-12-01 15:36:53
 #!category=去除广告
-#!update=2024-11-29 21:04:53
+#!update=2024-12-01 15:36:53
+[General]
+#>哔哩哔哩
+force-http-engine-hosts = %APPEND% :8000
 
 [Rule]
 #>微博
