@@ -1,5 +1,5 @@
 #!name = 功能插件｜✈TestFlight
-#!desc = 1.自定义TestFlight登录商店地区\n2.多账户保存及切换(需配置BoxJs使用)\n3.让通用应用在任意苹果处理器设备上可安装\n作者：Virgil Clyne\n更新：2024-12-05 08:26:56
+#!desc = 1.自定义TestFlight登录商店地区\n2.多账户保存及切换(需配置BoxJs使用)\n3.让通用应用在任意苹果处理器设备上可安装\n作者：VirgilClyne\n更新：2024-12-05 08:26:56
 #!openUrl = http://boxjs.com/#/app/iRingo.TestFlight
 #!author = VirgilClyne[https://github.com/VirgilClyne]
 #!homepage = https://github.com/NSRingo/TestFlight/wiki
