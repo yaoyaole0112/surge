@@ -1,16 +1,16 @@
-#!name=去除广告丨常广
-#!desc=去除常用软件广告,仅做整理整合\n作者：RuCu6，ZenmoFeiShi，可莉🅥\n更新：2024-12-01 15:36:53
+#!name=去除广告丨新手友好の
+#!desc=去除常用软件广告,仅做整理整合\n作者：RuCu6，ZenmoFeiShi，可莉🅥\n更新：2024-12-12 23:36:53
 #!category=去除广告
-#!update=2024-12-01 15:36:53
+#!update=2024-12-12 23:36:53
 [General]
 #>哔哩哔哩
 force-http-engine-hosts = %APPEND% :8000
 
 [Rule]
 #>微博
-DOMAIN,wbapp.uve.weibo.com,DIRECT,pro-matching,extended-matching
-DOMAIN-SUFFIX,biz.weibo.com,REJECT,pro-matching,extended-matching
-DOMAIN,dns.weibo.cn,REJECT,pro-matching,extended-matching
+DOMAIN,wbapp.uve.weibo.com,DIRECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
+DOMAIN,dns.weibo.cn,REJECT,extended-matching,pre-matching
 IP-CIDR,39.97.130.51/32,REJECT,no-resolve
 IP-CIDR,39.97.128.148/32,REJECT,no-resolve
 URL-REGEX,^http:\/\/api\.weibo\.cn\/2\/httpdns\/config,REJECT,extended-matching
@@ -18,36 +18,29 @@ URL-REGEX,^http:\/\/api\.weibo\.cn\/httpdns\/config,REJECT,extended-matching
 
 #>菜鸟
 AND,((URL-REGEX,^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT,Cainiao4iPhone*)),REJECT
-DOMAIN,acs4baichuan.m.taobao.com,REJECT,pro-matching,extended-matching
-DOMAIN,adsmind.ugdtimg.com,REJECT,pro-matching,extended-matching
-DOMAIN,amdc.m.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,api.sm.cn,REJECT,pro-matching,extended-matching
-DOMAIN,apiv4-iyes.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,baichuan-sdk.alicdn.com,REJECT,pro-matching,extended-matching
-DOMAIN,cad.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,huichuan-mc.sm.cn,REJECT,pro-matching,extended-matching
-DOMAIN,huichuan.sm.cn,REJECT,pro-matching,extended-matching
-DOMAIN,iyes.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT,pro-matching,extended-matching
-DOMAIN,mc.atm.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,nbsdk-baichuan.alicdn.com,REJECT,pro-matching,extended-matching
-DOMAIN,pre-acs.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT,pro-matching,extended-matching
-DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT,pro-matching,extended-matching
-DOMAIN,yk-ssp.ad.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,ykad-data.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,youku-acs.m.taobao.com,REJECT,pro-matching,extended-matching
+DOMAIN,adsmind.ugdtimg.com,REJECT,extended-matching,pre-matching
+DOMAIN,amdc.m.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,apiv4-iyes.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,httpdns.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,huichuan-mc.sm.cn,REJECT,extended-matching,pre-matching
+DOMAIN,huichuan.sm.cn,REJECT,extended-matching,pre-matching
+DOMAIN,iyes.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,mc.atm.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
+DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
+DOMAIN,yk-ssp.ad.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,ykad-data.youku.com,REJECT,extended-matching,pre-matching
 
 #>12306
 DOMAIN,ad.12306.cn,DIRECT
 
 #>淘宝
-DOMAIN,adashx.m.taobao.com,REJECT,pro-matching,extended-matching
-DOMAIN,ossgw.alicdn.com,REJECT,pro-matching,extended-matching
-DOMAIN,ems.youku.com,REJECT,pro-matching,extended-matching
-DOMAIN,hudong.alicdn.com,REJECT,pro-matching,extended-matching
-DOMAIN,h-adashx.ut.taobao.com,REJECT,pro-matching,extended-matching
-DOMAIN,ut.taobao.com,REJECT,pro-matching,extended-matching
+DOMAIN,adashx.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN,ossgw.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,ems.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,hudong.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,h-adashx.ut.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN,ut.taobao.com,REJECT,extended-matching,pre-matching
 
 #>阿里云盘
 IP-CIDR,203.107.1.1/24,REJECT,no-resolve
@@ -70,27 +63,27 @@ AND,((PROTOCOL,QUIC), (DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 
 #>高德地图
 AND,((URL-REGEX,^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT,AMapiPhone*)),REJECT
-DOMAIN,amap-aos-info-nogw.amap.com,REJECT,pro-matching,extended-matching
-DOMAIN,free-aos-cdn-image.amap.com,REJECT,pro-matching,extended-matching
-DOMAIN-SUFFIX,v.smtcdns.com,REJECT,pro-matching,extended-matching
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT,extended-matching,pre-matching
+DOMAIN,free-aos-cdn-image.amap.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,v.smtcdns.com,REJECT,extended-matching,pre-matching
 
 #>滴滴出行
-DOMAIN,hd.xiaojukeji.com,REJECT,pro-matching,extended-matching
-DOMAIN,gwp.xiaojukeji.com,REJECT,pro-matching,extended-matching
+DOMAIN,hd.xiaojukeji.com,REJECT,extended-matching,pre-matching
+DOMAIN,gwp.xiaojukeji.com,REJECT,extended-matching,pre-matching
 AND,((IP-ASN,45090,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
 AND,((IP-ASN,63646,no-resolve), (DEST-PORT,25641), (PROTOCOL,TCP)),REJECT
 
 #>彩云天气
-DOMAIN,abyss.cyapi.cn,REJECT,pro-matching,extended-matching
-DOMAIN,ad.cyapi.cn,REJECT,pro-matching,extended-matching
+DOMAIN,abyss.cyapi.cn,REJECT,extended-matching,pre-matching
+DOMAIN,ad.cyapi.cn,REJECT,extended-matching,pre-matching
 
 #>闲鱼
 AND,((URL-REGEX,^http:\/\/.+\/amdc\/mobileDispatch), (USER-AGENT,%E9%97%B2%E9%B1%BC*)),REJECT
 
 #>Keep
-DOMAIN,hc-ssp.sm.cn,REJECT,pro-matching,extended-matching
-DOMAIN,httpdns.n.netease.com,REJECT,pro-matching,extended-matching
-DOMAIN,httpdns.calorietech.com,REJECT,pro-matching,extended-matching
+DOMAIN,hc-ssp.sm.cn,REJECT,extended-matching,pre-matching
+DOMAIN,httpdns.n.netease.com,REJECT,extended-matching,pre-matching
+DOMAIN,httpdns.calorietech.com,REJECT,extended-matching,pre-matching
 
 #>哔哩哔哩
 URL-REGEX,^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH,REJECT-TINYGIF,extended-matching
@@ -396,6 +389,9 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? 'delpa
 #>百度跳转 //m.baidu.com, www.baidu.com, zhidao.baidu.com
 百度跳转 = type=http-response, pattern=^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$, script-path=https://raw.ananaskop.com/Scripts/Baidu_index.js, requires-body=true
 
+#>微信链接限制解除  //weixin110.qq.com, security.wechat.com
+微信链接限制解除 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://raw.ananaskop.com/Scripts/UnblockURLinWeChat.js, requires-body=true
+
 #>Keep //kad.gotokeep.com, 42.187.199.248, api.gotokeep.com
 Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v3\/basic, script-path=https://raw.ananaskop.com/Scripts/Keep.js, requires-body=true
 
@@ -416,4 +412,4 @@ Keep = type=http-response, pattern=^https:\/\/api\.gotokeep\.com\/config\/v3\/ba
 哔哩哔哩 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?), script-path=https://raw.ananaskop.com/Scripts/Bilibili.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% *.weibo.cn, *.weibo.com, weibo.com, cn-acs.m.cainiao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ad.12306.cn, mobile.12306.cn, *api.alipan.com, member.alipan.com, pan.baidu.com, image.mybank.icbc.com.cn, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, home.mi.com, wallet.95516.com, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
+hostname = %APPEND% *.weibo.cn, *.weibo.com, weibo.com, cn-acs.m.cainiao.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ad.12306.cn, mobile.12306.cn, *api.alipan.com, member.alipan.com, pan.baidu.com, image.mybank.icbc.com.cn, gab.122.gov.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, mp.weixin.qq.com, home.mi.com, wallet.95516.com, *.hupu.com, api.pinduoduo.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api.yangkeduo.com, 114.115.217.129, home.umetrip.com, edith.xiaohongshu.com, www.xiaohongshu.com, rec.xiaohongshu.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, api.caiyunapp.com, *.cyapi.cn, weixin110.qq.com, security.wechat.com, m.baidu.com, www.baidu.com, zhidao.baidu.com, *.m.goofish.com, kad.gotokeep.com, 42.187.199.248, api.gotokeep.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
