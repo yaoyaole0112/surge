@@ -1,20 +1,20 @@
 #!name=去除广告｜微博
-#!desc= 过滤微博广告及去除各部分推广模块\n作者：RuCu6, zmqcherish\n更新：2024-12-11 17:30:36
+#!desc= 过滤微博广告及去除各部分推广模块\n作者：RuCu6, zmqcherish\n更新：2024-12-17 10:41:36
 #!author=RuCu6[https://github.com/RuCu6], zmqcherish[https://github.com/zmqcherish]
 #!icon=https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/weibo.png
 #!Repo=https://kelee.one/Tool/Loon/Plugin/Weibo_remove_ads.plugin
 #!category=去除广告
-#!update=2024-12-11 17:30:36
+#!update=2024-12-17 10:41:36
 
 [Rule]
-DOMAIN,wbapp.uve.weibo.com,DIRECT,extended-matching
-DOMAIN,huodong.weibo.cn,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
-DOMAIN,dns.weibo.cn,REJECT,extended-matching,pre-matching
-IP-CIDR,39.97.130.51/32,REJECT,no-resolve,pre-matching
-IP-CIDR,39.97.128.148/32,REJECT,no-resolve,pre-matching
-URL-REGEX,"^http:\/\/api\.weibo\.cn\/2\/httpdns\/config",REJECT,extended-matching
-URL-REGEX,"^http:\/\/api\.weibo\.cn\/httpdns\/config",REJECT,extended-matching
+DOMAIN,wbapp.uve.weibo.com,DIRECT
+DOMAIN,huodong.weibo.cn,REJECT
+DOMAIN-SUFFIX,biz.weibo.com,REJECT
+DOMAIN,dns.weibo.cn,REJECT
+IP-CIDR,39.97.130.51/32,REJECT,no-resolve
+IP-CIDR,39.97.128.148/32,REJECT,no-resolve
+URL-REGEX,"^http:\/\/api\.weibo\.cn\/2\/httpdns\/config",REJECT
+URL-REGEX,"^http:\/\/api\.weibo\.cn\/httpdns\/config",REJECT
 
 [Map Local]
 ^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily) data-type=text data="{}" status-code=200
