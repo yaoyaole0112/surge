@@ -1,6 +1,6 @@
 # 规则名称: AdBlock
 # 规则统计: 89611
-
+# repo：https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/AdBlock.list
 DOMAIN-SUFFIX,0.myikas.com
 DOMAIN-SUFFIX,0.net.easyjet.com
 DOMAIN-SUFFIX,000dn.com
