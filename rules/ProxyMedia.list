@@ -1,7 +1,7 @@
-# Repo：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
 # 内容：国外媒体列表
-# 更新：2024-08-27 13:51:18
+# 更新：2024-12-14 11:14:53
 # 数量：367条
+# repo：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
 
 # ABC
 DOMAIN-SUFFIX,edgedatg.com
