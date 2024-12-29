@@ -1,11 +1,11 @@
 #########################################
 # Sukka's Ruleset - Reject Domains
-# Last Updated: 2024-11-14T14:40:56.964Z
-# Size: 159
+# Last Updated: 2024-12-20T14:24:56.412Z
+# Size: 161
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
-# Repo: https://ruleset.skk.moe/List/non_ip/reject.conf
+# repo：https://ruleset.skk.moe/List/non_ip/reject.conf
 # The ruleset supports AD blocking, tracking protection, privacy protection, anti-phishing, anti-mining
 #########################################
 DOMAIN,this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
@@ -15,6 +15,7 @@ DOMAIN-SUFFIX,crazyegg.com
 DOMAIN-SUFFIX,amplitude.com
 DOMAIN-SUFFIX,notifysrv.com
 DOMAIN-SUFFIX,advertising.com
+DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,openx.net
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,httpdns.pro
@@ -79,6 +80,7 @@ DOMAIN,httpdns.push.heytapmobi.com
 DOMAIN,httpdns.ocloud.heytapmobi.com
 DOMAIN,httpdns.push.oppomobile.com
 DOMAIN,httpdns.ocloud.oppomobile.com
+DOMAIN,resolver.msg.xiaomi.net
 DOMAIN,dns.weixin.qq.com.cn
 DOMAIN-KEYWORD,.estream.
 DOMAIN-KEYWORD,jshosting
