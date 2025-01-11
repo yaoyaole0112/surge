@@ -1,28 +1,27 @@
 #!name=面板工具｜联通余量(v4)
 #!desc=定时查询 与 Panel 面板\n作者：ChinaTelecomOperators
 #!category=面板工具
-#!arguments=定时查询:*/5 * * * *,禁用MITM:hostname
-#!arguments-desc=定时查询：自定义Cron表达式，禁用输入 # 。\n\n禁用获取CK，禁用MITM输入 # 。
+#!arguments=cronexp:*/5 * * * *,cron:10010v4-cron,capture:10010v4-capture,panel:10010v4-panel
+#!arguments-desc=cronexp\n\n定时任务\n默认为每 5 分钟\n\ncron\n\n自定义定时任务名\n若设为 # 可取消定时任务\n\npanel\n\n自定义面板名\n若设为 # 可取消面板\n\ncapture\n\n自定义抓包脚本名\n若设为 # 可取消抓包
+
 [General]
 force-http-engine-hosts = %APPEND% 10010v4.com, m.client.10010.com
 
 [Script]
 # > Response
-10010v4-response = type=http-response,pattern=^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js,requires-body=true,max-size=0,timeout=120
+{{{capture}}} = type=http-response,pattern=^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js,requires-body=true,max-size=0,timeout=120
 
 # > Cron
-10010v4-cron = type=cron,cronexp={{{定时查询}}},timeout=120,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js
+{{{cron}}} = type=cron,cronexp="{{{cronexp}}}",timeout=120,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js
 
 # > Request
 10010v4-request = type=http-request,pattern=^https?:\/\/10010v4\.com,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js,requires-body=false,max-size=0,timeout=120
 
 # > Panel
-10010v4-panel = type=generic,timeout=120,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js
-#argument=icon=arrow.up.arrow.down.circle&icon-color=#5d84f8
+10010v4-panel = type=generic,timeout=120,script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js,argument=icon=arrow.up.arrow.down.circle&icon-color=#5d84f8
 
 [MITM]
-{{{禁用MITM}}} = %APPEND% 10010v4.com, m.client.10010.com
+hostname = %APPEND% 10010v4.com, m.client.10010.com
 
 [Panel]
-10010v4-panel = script-name=10010v4-panel,update-interval=300
-
+{{{panel}}} = script-name=10010v4-panel,update-interval=300
