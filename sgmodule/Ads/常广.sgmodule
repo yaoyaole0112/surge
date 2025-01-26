@@ -1,14 +1,14 @@
 #!name=去除广告丨新手友好の
 #!desc=去除常用软件广告,仅做整理整合\n作者：RuCu6，ZenmoFeiShi，可莉🅥\n更新：2024-12-12 23:36:53
 #!category=去除广告
-#!update=2024-12-12 23:36:53
+#!update=2025-01-26 11:36:53
 [General]
 #>哔哩哔哩
 force-http-engine-hosts = %APPEND% :8000
 
 [Rule]
 #>微博
-DOMAIN,wbapp.uve.weibo.com,DIRECT,extended-matching
+DOMAIN,wbapp.uve.weibo.com,REJECT,extended-matching
 DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
 DOMAIN,dns.weibo.cn,REJECT,extended-matching,pre-matching
 IP-CIDR,39.97.130.51/32,REJECT,no-resolve
