@@ -1,5 +1,8 @@
 # Emby服规则
 
+# Reflix App
+DOMAIN-SUFFIX,api.reflix.top
+
 # July
 DOMAIN-SUFFIX,july.vfing.de
 
