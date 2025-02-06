@@ -18,8 +18,8 @@ DOMAIN-SUFFIX,cavps.eu.org
 # 琴鸟
 DOMAIN-SUFFIX,cdn.lyrebirdemby.com
 
-# SaturDay.Lite
-DOMAIN-SUFFIX,lite.saturday.video
+# SaturDay.Lite //服务器线路及位置: 美国, 不保证直连
+# DOMAIN-SUFFIX,lite.saturday.video
 
 # Nanflix
 DOMAIN-SUFFIX,us.nanflix.net
