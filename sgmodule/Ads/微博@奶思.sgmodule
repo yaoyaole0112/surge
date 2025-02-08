@@ -1,12 +1,12 @@
 #!name=去除广告｜微博@奶思
-#!desc=去除常见的微博广告，可能不全面\n作者：奶思\n更新：2024-12-09 21:48
+#!desc=去除常见的微博广告，可能不全面\n作者：奶思\n更新：2024-12-17 20:33:00
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png
 #!homepage=https://github.com/fmz200/wool_scripts
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin
 #!tg-group=https://t.me/lanjieguanggao
 #!category=去除广告
-#!update=2024-12-09 21:48
+#!update=2024-12-17 20:33:00
 
 [Rule]
 # 收集用户信息，上传用户日志的请求
@@ -16,7 +16,6 @@ URL-REGEX,"^https?:\/\/api-cloudim\.api\.weibo\.com\/v1\/log\/",REJECT-DROP
 DOMAIN-SUFFIX,biz.weibo.com,REJECT
 DOMAIN,bootpreload.uve.weibo.com,REJECT
 # 其他广告
-DOMAIN,f.video.weibocdn.com,REJECT
 DOMAIN-SUFFIX,fastimage.uve.weibo.com,REJECT
 DOMAIN-SUFFIX,adimg.vue.weibo.com,REJECT
 DOMAIN-SUFFIX,zymo.mps.weibo.com,REJECT
