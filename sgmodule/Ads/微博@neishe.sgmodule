@@ -1,0 +1,38 @@
+#!name=去除广告｜微博@neishe321
+#!desc=去除微博广告，移除非必要模块\n作者：neishe321\n更新：2025-02-10
+#!author=neishe321
+#!icon=https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/weibo.png
+#!Repo=https://raw.githubusercontent.com/neishe321/My_Scripts/refs/heads/main/Surge/Module/weibo.sgmodule
+#!category=去除广告
+#!update=2025-02-10
+
+[Rule]
+# > 开屏广告
+DOMAIN,wbapp.uve.weibo.com,REJECT,pre-matching,no-resolve
+DOMAIN,sdkapp.uve.weibo.com,REJECT,pre-matching,no-resolve
+DOMAIN,bootpreload.uve.weibo.com,REJECT,pre-matching,no-resolve
+DOMAIN,bootrealtime.uve.weibo.com,REJECT,pre-matching,no-resolve
+DOMAIN-SUFFIX,biz.weibo.com,REJECT,pre-matching,no-resolve
+
+[URL Rewrite]
+# > 推广内容
+^https?:\/\/api\.weibo\.cn\/\d\/(push\/active|client\/addlog_batch|container\/asyn|shproxy\/chaohua\/discovery\/searchactive|checkin\/show|!\/live\/media_homelist|statuses\/container_positive|!\/was\/finder\/searchbarchange) - reject
+
+[Body Rewrite]
+# > tab标签处理
+http-response-jq ^https?:\/\/api\.weibo\.cn\/\d\/groups\/allgroups\/v\d '.pageDatas |= map(select(.pageDataType != "homeExtend")) | (.pageDatas[0].categories[0].pageDatas |= del(.[0]))'
+# > 精简我的页面
+http-response-jq ^https?:\/\/api\.weibo\.cn\/\d\/profile\/me '.items |= (.[0:2] | if length > 0 and .[0].header? then .[0].header |= del(.vipIcon, .vipView) else . end | if length > 1 and .[1].items? then .[1].items |= .[0:4] else . end)'
+# > 去除超话广场
+http-response-jq ^https?:\/\/api\.weibo\.cn\/\d\/\!\/huati\/discovery_home_bottom_channels '.button_configs? |= empty | .channelInfo.channel_list |= if length > 1 then del(.[1]) else . end'
+# > 去除视频流广告
+http-response-jq ^https?:\/\/api\.weibo\.cn\/\d\/video\/tiny_stream_video_list '.statuses |= map(if (.is_ad == 1 or .mblogtypename == "广告") then empty else . end)'
+# > 解锁会员图标
+http-response-jq ^https?:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list '.data.list |= map(if has("cardType") then .cardType = "2" else . end | if has("tag") then .tag = "" else . end)'
+
+[Script]
+# > 微博净化
+weibo_clean.js = type=http-response,pattern=^https?:\/\/api\.weibo\.cn\/\d\/(guest\/statuses_extend|statuses\/extend|statuses\/show|comments\/build_comments|search\/(finder|container_timeline|container_discover)|searchall|statuses\/container_timeline(_.*)?(\?.*)?$|profile\/container_timeline|messageflow\/notice|statuses\/repost_timeline|flowlist),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/neishe321/My_Scripts/main/Scripts/weibo_remove_ads.js
+
+[MITM]
+hostname = %APPEND% api.weibo.cn, new.vip.weibo.cn
