@@ -1,11 +1,11 @@
 #!name=去除广告｜向日葵
-#!desc=移除开屏广告、广告横幅。\n作者：可莉🅥\n更新：2024-11-28 00:00:00
+#!desc=移除开屏广告、广告横幅。\n作者：可莉🅥\n更新：2025-02-28 21:31:25
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OraySunlogin.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id551941458
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-28 00:00:00
+#!update=2025-02-28 21:31:25
 
 [Rule]
 # 开屏广告
