@@ -1,10 +1,10 @@
 #!name=去除广告｜12306
-#!desc=过滤12306应用内广告及开屏广告\n作者：RuCu6\n更新：2024-11-28 00:00:00
+#!desc=过滤12306应用内广告及开屏广告\n作者：RuCu6\n更新：2025-02-28 21:26:00
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/12306.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id564818797
-#!update=2024-11-28 00:00:00
+#!update=2025-02-28 21:26:00
 
 [Rule]
 # 放行规则
@@ -18,4 +18,4 @@ DOMAIN,ad.12306.cn,DIRECT,extended-matching
 移除12306应用内广告 = type=http-request, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://kelee.one/Resource/Script/12306/12306_remove_ads.js
 
 [MITM]
-hostname = %APPEND% ad.12306.cn, mobile.12306.cn
+hostname = %APPEND% ad.12306.cn, mobile.12306.cn= %APPEND% ad.12306.cn, mobile.12306.cn
