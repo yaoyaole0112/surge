@@ -1,10 +1,10 @@
 #!name=去除广告｜墨迹天气
-#!desc=移除天气页面横幅、工具栏，移除时景关注页面推荐，精简我的页面。\n作者：可莉🅥\n更新：2024-11-28 00:00:00
+#!desc=移除天气页面横幅、工具栏，移除时景关注页面推荐，精简我的页面。\n作者：可莉🅥\n更新：2025-02-28 21:31:25
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MojiWeather.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id434209233
-#!update=2024-11-28 00:00:00
+#!update=2025-02-28 21:31:25
 
 [Rule]
 # 京东
