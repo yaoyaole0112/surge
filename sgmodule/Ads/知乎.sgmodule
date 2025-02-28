@@ -1,11 +1,11 @@
 #!name=去除广告｜知乎
-#!desc=移除各部分广告，移除知乎安全中心跳转。\n作者：RuCu6,blackmatrix7\n更新：2024-11-28 00:00:00
+#!desc=移除各部分广告，移除知乎安全中心跳转。\n作者：RuCu6,blackmatrix7\n更新：2025-02-28 21:21:34
 #!author=RuCu6[https://github.com/RuCu6], blackmatrix7[https://github.com/blackmatrix7]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Zhihu.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id432274380
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-28 00:00:00
+#!update=2025-02-28 21:21:34
 
 [Rule]
 # 知乎
