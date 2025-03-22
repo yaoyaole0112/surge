@@ -5,7 +5,7 @@
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id1387717110
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!uUpdate=2024-11-28 00:00:00
+#!update=2024-11-28 00:00:00
 
 [Rule]
 DOMAIN,cdn-ad.wtzw.com,REJECT,extended-matching,pre-matching
