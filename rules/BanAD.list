@@ -1,5 +1,5 @@
-# Repo:https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 # 本碎片只包含常见广告关键字、广告联盟。无副作用，放心使用
+# repo：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 
 # 广告关键词
 DOMAIN-KEYWORD,admarvel
