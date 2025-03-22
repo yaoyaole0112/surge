@@ -1,0 +1,14 @@
+# [Rule]
+# > fuck 美团
+DOMAIN-SUFFIX,dreport.meituan.net,REJECT,pre-matching,extended-matching
+DOMAIN-SUFFIX,d.meituan.net,REJECT,pre-matching,extended-matching
+IP-CIDR,202.90.110.46/32,REJECT,pre-matching,no-resolve
+IP-CIDR,202.90.108.13/32,REJECT,pre-matching,no-resolve
+IP-CIDR,202.90.110.46/32,REJECT,no-resolve
+IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+
+# > fuck Telegram
+IP-CIDR,95.161.76.100/31,REJECT,pre-matching,no-resolve
+
+# > fuck 抖音
+DOMAIN-SUFFIX,slb-p2p.vcloud.ks-live.com,REJECT,pre-matching,extended-matching
