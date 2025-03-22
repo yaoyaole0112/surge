@@ -1,7 +1,7 @@
-# Repo：https://raw.githubusercontent.com/SunsetMkt/anti-ip-attribution/main/generated/surge.list
 # 针对部分网站显示IP归属地的分流规则
 # anti-ip-attribution surge.list v0.3.1 24db48a4973b31d718703136cfcc2b3621171f36
 # https://github.com/SunsetMkt/anti-ip-attribution
+# repo：https://raw.githubusercontent.com/SunsetMkt/anti-ip-attribution/main/generated/surge.list
 # Surge分流规则
 DOMAIN,httpdns.bilivideo.com,REJECT
 IP-CIDR,47.101.175.206/32,REJECT,no-resolve
@@ -20,11 +20,6 @@ IP-CIDR,114.116.215.110/32,REJECT,no-resolve
 IP-CIDR,116.63.10.31/32,REJECT,no-resolve
 IP-CIDR,112.64.218.119/32,REJECT,no-resolve
 IP-CIDR,112.65.200.117/32,REJECT,no-resolve
-DOMAIN-SUFFIX,ip125.com
-DOMAIN-SUFFIX,ruanmei.com
-DOMAIN-SUFFIX,userlink.alicdn.com
-DOMAIN-SUFFIX,ip-api.com
-DOMAIN-SUFFIX,ithome.com
 DOMAIN-SUFFIX,biliapi.net
 DOMAIN-SUFFIX,biliapi.com
 DOMAIN-SUFFIX,bilibili.com
@@ -61,7 +56,6 @@ DOMAIN-SUFFIX,zhihu.com
 IP-CIDR,103.41.167.0/24,no-resolve
 IP-CIDR,118.89.204.198/23,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/40,REJECT,no-resolve
-DOMAIN-KEYWORD,coolapk
 DOMAIN-KEYWORD,core-c-lq
 DOMAIN-KEYWORD,core-lq
 DOMAIN-KEYWORD,normal-c-lq
