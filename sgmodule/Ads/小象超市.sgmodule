@@ -1,0 +1,24 @@
+#!name=去除广告｜小象超市
+#!desc=移除开屏广告、应用内弹窗、猜你想买、横幅推广和悬浮窗。\n作者：可莉🅥
+#!category=去除广告
+
+[Map Local]
+^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash data-type=text data="{}" status-code=200
+
+^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info data-type=text data="{}" status-code=200
+
+^https:\/\/mall\.meituan\.com\/api\/c\/jigsaw\/code\/category-banner-\d+\/ data-type=text data="{}" status-code=200
+
+^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/order\/recommend\/v\d data-type=text data="{}" status-code=200
+
+^https:\/\/mall\.meituan\.com\/api\/c\/banner\/ data-type=text data="{}" status-code=200
+
+^https:\/\/mall\.meituan\.com\/api\/c\/poi\/\d+\/personal\/recommend data-type=text data="{}" status-code=200
+
+^https:\/\/businessapi\.ksedt\.com\/signupindex\/jxlist data-type=text data="{}" status-code=200
+
+[Script]
+移除下发广告 = type=http-response, pattern=^https:\/\/portal-portm\.meituan\.com\/horn_ios\/mergeRequest, script-path=https://kelee.one/Resource/Script/iMaiCai/iMaiCai_remove_ads.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% portal-portm.meituan.com, mall.meituan.com, businessapi.ksedt.com
