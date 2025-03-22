@@ -1,6 +1,6 @@
-# Repo:https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
 # 包含常用应用的各种去广告规则。
 # 可能有轻微副作用，可放心使用。（如果网站功能和广告冲突，会删掉去广告规则）
+# repo：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
 
 # 163
 DOMAIN-SUFFIX,a.youdao.com
