@@ -235,6 +235,6 @@ DOMAIN,ptlogin6.qidian.com
 DOMAIN,api.wmpvp.com
 
 # > IT之家
-DOMAIN-SUFFIF,ithome.com
-DOMAIN-SUFFIF,userlink.alicdn.com
+DOMAIN-SUFFIX,ithome.com
+DOMAIN-SUFFIX,userlink.alicdn.com
 
