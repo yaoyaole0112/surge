@@ -11,7 +11,10 @@ DOMAIN-SUFFIX,july-hk.vfing.de
 
 # 起点站
 DOMAIN-SUFFIX,favoritewife.com
+# 起点站公益路线
 DOMAIN-SUFFIX,free.28.al
+# 起点站公费路线
+DOMAIN-SUFFIX,nb.28.al
 
 # New
 DOMAIN-SUFFIX,new.emby.moe
