@@ -1,0 +1,17 @@
+#!name=功能插件｜京东比价
+#!desc=需在商品详情页面查看比价内容\n作者：小白脸
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JD.png
+#!openUrl=https://apps.apple.com/app/id414245413
+#!category=功能插件
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-04-12 22:50:31
+
+
+[Script]
+京东比价 = type=http-response, pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://kelee.one/Resource/Script/JD/JD_Price.js, requires-body=true, timeout=10
+
+[Script]
+京东比价 = type=http-response, pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://kelee.one/Resource/Script/JD/JD_Price.js, requires-body=true, timeout=10
+
+[MITM]
+hostname = %APPEND% in.m.jd.com
