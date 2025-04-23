@@ -3,24 +3,13 @@
 # Reflix App
 DOMAIN-SUFFIX,api.reflix.top
 
-# July
-DOMAIN-SUFFIX,july.vfing.de
-DOMAIN-SUFFIX,july-us.vfing.de
-DOMAIN-SUFFIX,july-sg.vfing.de
-DOMAIN-SUFFIX,july-hk.vfing.de
-
-# 起点站
-DOMAIN-SUFFIX,favoritewife.com
 # 起点站公益路线
 DOMAIN-SUFFIX,free.28.al
+DOMAIN-SUFFIX,qdzfreecdn.b-cdn.net
+
 # 起点站公费路线
 DOMAIN-SUFFIX,nb.28.al
-
-# New
-DOMAIN-SUFFIX,new.emby.moe
-
-# 鹅服
-DOMAIN-SUFFIX,cavps.eu.org
+DOMAIN-SUFFIX,qdz1.top
 
 # 琴鸟
 DOMAIN-SUFFIX,cdn.lyrebirdemby.com
@@ -32,15 +21,13 @@ IP-CIDR,188.172.228.65/32,no-resolve
 # Nanflix
 DOMAIN-SUFFIX,us.nanflix.net
 
-# 守候影院
-DOMAIN-SUFFIX,emby.cn2gias.uk
-
 # 惊蛰
 DOMAIN-SUFFIX,emby.jingzhe.pro
 
-# MICU Cloud Media
-DOMAIN-SUFFIX,tv.micu.hk
+IKUN音乐服
+DOMAIN-SUFFIX,music.xxxh.de
 
-# 比比
-DOMAIN-SUFFIX,beebi.org
+未响
+DOMAIN-SUFFIX,music.mefun.org
+
 
