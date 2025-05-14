@@ -1,6 +1,11 @@
 #!name=去除广告｜小象超市
 #!desc=移除开屏广告、应用内弹窗、猜你想买、横幅推广和悬浮窗。\n作者：可莉🅥
 #!category=去除广告
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/iMaiCai.png
+#!openUrl=https://apps.apple.com/app/id1444411068
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-05-13 15:17:08
 
 [Map Local]
 ^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash data-type=text data="{}" status-code=200
@@ -22,3 +27,4 @@
 
 [MITM]
 hostname = %APPEND% portal-portm.meituan.com, mall.meituan.com, businessapi.ksedt.com
+

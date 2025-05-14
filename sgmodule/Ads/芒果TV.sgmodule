@@ -1,7 +1,11 @@
 #!name=去除广告｜芒果TV
-#!desc= 过滤芒果TV客户端广告\n作者：RuCu6\n更新：2025-03-05 12:02:08
+#!desc= 过滤芒果TV客户端广告\n作者：RuCu6
 #!category=去除广告
-#!update=2025-03-05 12:02:08
+#!author=RuCu6[https://github.com/RuCu6]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MangoTV.png
+#!openUrl=https://apps.apple.com/app/id629774477
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-05-13 15:17:08
 
 [Rule]
 DOMAIN,credits.bz.mgtv.com,REJECT,extended-matching,pre-matching
@@ -46,3 +50,4 @@ URL-REGEX,"^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\?",REJECT-TI
 
 [MITM]
 hostname = %APPEND% *.mgtv.com
+

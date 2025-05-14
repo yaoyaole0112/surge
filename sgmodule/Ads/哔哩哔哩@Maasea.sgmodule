@@ -1,7 +1,10 @@
 #!name=去除广告｜哔哩哔哩@Maasea
-#!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此插件必须启用MitM-over-HTTP/2功能。\n作者：Maasea,kokoryh,RuCu6,可莉
+#!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此插件必须启用MitM-over-HTTP/2功能。\n作者：Maasea,kokoryh,RuCu6,可莉🅥
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
+#!openUrl=https://apps.apple.com/app/id736536022
 #!category=去除广告
-#!update=2025-03-28 00:08:44
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-03-28 00:08:44
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
@@ -33,3 +36,4 @@ Proto处理 = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.
 
 [MITM]
 hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com
+

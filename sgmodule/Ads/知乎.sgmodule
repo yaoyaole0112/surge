@@ -5,7 +5,7 @@
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id432274380
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2025-04-04 19:38:19
+#!date=2025-05-13 15:17:08
 
 [Rule]
 DOMAIN,appcloud.zhihu.com,REJECT,extended-matching,pre-matching
@@ -95,4 +95,5 @@ http-response-jq ^https:\/\/api\.zhihu\.com\/questions\/\d+(?:\/answers|\/feeds|
 拦截服务器推送配置 config all = type=http-response, pattern=^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/zhihu\/config\/all\?, script-path=https://kelee.one/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% *.zhihu.com
+hostname = %APPEND% api.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, m-cloud.zhihu.com, page-info.zhihu.com, www.zhihu.com, zhuanlan.zhihu.com
+

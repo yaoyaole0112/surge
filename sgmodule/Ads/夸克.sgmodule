@@ -1,9 +1,9 @@
 #!name=去除广告｜夸克
-#!desc=移除阅读广告，精简我的页面。\n作者：可莉🅥\n更新：2025-02-28 21:32:19
+#!desc=移除阅读广告，精简我的页面。\n作者：可莉🅥
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!category=去除广告
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2025-02-28 21:32:19
+#!date=2025-05-13 15:17:08
 
 [URL Rewrite]
 ^https:\/\/huichuan\.sm\.cn\/nativead$ - reject
@@ -16,3 +16,4 @@
 
 [MITM]
 hostname = %APPEND% huichuan.sm.cn, stars.shuqireader.com, open-cms-api.quark.cn
+

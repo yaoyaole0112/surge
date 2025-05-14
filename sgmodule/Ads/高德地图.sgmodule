@@ -5,7 +5,7 @@
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id461703208
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2025-03-31 12:16:54
+#!date=2025-05-13 15:17:08
 
 [Rule]
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"AMapiPhone*")),REJECT
@@ -76,3 +76,4 @@ http-response-jq ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail
 
 [MITM]
 hostname = %APPEND% m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
+

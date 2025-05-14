@@ -1,11 +1,11 @@
 #!name=去除广告丨拼多多
-#!desc=移除开屏广告、底栏多多视频、会场入口、聊天页面精选推荐及推广，精简首页和个人中心。\n作者：RuCu6，ZenmoFeiShi，可莉🅥\n更新：2024-11-28 00:00:00
+#!desc=移除开屏广告、底栏多多视频、会场入口、聊天页面精选推荐及推广，精简首页和个人中心。\n作者：RuCu6，ZenmoFeiShi，可莉🅥
 #!author=RuCu6[https://github.com/RuCu6], ZenmoFeiShi[https://github.com/ZenmoFeiShi], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/PinDuoDuo.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id1044283059
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-28 00:00:00
+#!date=2025-05-13 15:17:08
 
 [Rule]
 AND,((URL-REGEX,"^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")),REJECT
@@ -52,3 +52,4 @@ http-response-jq ^https:\/\/api\.pinduoduo\.com\/search 'delpaths([["expansion"]
 
 [MITM]
 hostname = %APPEND% api.pinduoduo.com, api.yangkeduo.com
+

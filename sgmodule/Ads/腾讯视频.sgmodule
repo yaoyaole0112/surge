@@ -1,11 +1,11 @@
 #!name=去除广告｜腾讯视频
-#!desc=过滤腾讯视频客户端广告，客户端版本高于8.9.40可能会导致此插件失效。\n作者：RuCu6\n更新：2024-11-28 00:00:00
+#!desc=过滤腾讯视频客户端广告，客户端版本高于8.9.40可能会导致此插件失效。\n作者：RuCu6
 #!author=RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Tencent_Video.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id458318329
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-28 00:00:00
+#!date=2025-05-13 15:17:08
 
 [Rule]
 DOMAIN,adsmind.gdtimg.com,REJECT,extended-matching,pre-matching
@@ -33,3 +33,4 @@ URL-REGEX,"^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.
 
 [MITM]
 hostname = %APPEND% vv.video.qq.com
+

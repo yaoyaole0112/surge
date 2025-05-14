@@ -3,7 +3,7 @@
 #!author=Keywos[https://github.com/Keywos], RuCu6[https://github.com/RuCu6]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NeteaseCloudMusic.png
 #!category=去除广告
-#!update=2025-02-28 20:08:47
+#!date=2025-02-28 20:08:47
 
 [Rule]
 DOMAIN,iadmat.nosdn.127.net,REJECT,extended-matching,pre-matching
@@ -43,3 +43,4 @@ DOMAIN,ipv6.music.163.com,REJECT,extended-matching,pre-matching
 
 [MITM]
 hostname = %APPEND% interface*.music.163.com
+
