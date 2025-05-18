@@ -1,11 +1,10 @@
 #!name=去除广告｜广告平台拦截器
-#!desc=此插件是所有去广告插件的基础，只针对广告平台处理。\n作者：可莉🅥
-#!!支持拦截腾讯、字节跳动、快手、百度、邑盟、倍孜、艾狄墨搏、袤博、极光、个推、友盟、阿里、优比客思、秒针、网易、美团、小米、京东、天目、讯飞、泛连、锐讯灵通、聚次方、美数、嗨量、钧云、变现猫、章鱼等广告平台的广告请求，更适合iOS平台的应用。你依然需要安装其他去广告插件来搭配使用，并确保此插件始终排序在顶部。
+#!desc=此插件是所有去广告插件的基础，只针对广告平台处理。你依然需要安装其他去广告插件来搭配使用，并确保此插件始终排序在顶部。\n作者：可莉🅥
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Website_icon/120px/TencentAd.png
 #!category=去除广告
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-13 15:17:08
+#!date=2025-05-14 02:57:41
 
 [Rule]
 AND,((DOMAIN-KEYWORD,-ad-,extended-matching),(DOMAIN-SUFFIX,byteimg.com,extended-matching)),REJECT,pre-matching
@@ -48,6 +47,7 @@ DOMAIN,mssdk-bu.bytedance.com,REJECT,extended-matching,pre-matching
 DOMAIN,toblog.ctobsnssdk.com,REJECT,extended-matching,pre-matching
 DOMAIN,mssdk.volces.com,REJECT,extended-matching,pre-matching
 DOMAIN,pangolin.snssdk.com,REJECT,extended-matching,pre-matching
+DOMAIN,lf-cdn-tos.bytescm.com,REJECT,extended-matching,pre-matching
 DOMAIN,gromore.pangolin-sdk-toutiao.com,REJECT,extended-matching,pre-matching
 DOMAIN,ether-pack.pangolin-sdk-toutiao.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,-ad-sign.byteimg.com,REJECT,extended-matching,pre-matching
@@ -268,4 +268,3 @@ DOMAIN,rpe.xdplt.com,REJECT,extended-matching,pre-matching
 
 [MITM]
 hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
-
