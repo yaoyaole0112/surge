@@ -5,7 +5,7 @@
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id324684580
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-06-01 00:10:38
+!date=2025-06-02 19:39:26
 
 [Rule]
 AND,((DOMAIN,spclient.wg.spotify.com,extended-matching),(PROTOCOL,QUIC)),REJECT
