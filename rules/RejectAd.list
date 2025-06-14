@@ -9,10 +9,10 @@
 #!system = iOS, iPadOS
 #!system_version =
 #!loon_version =
-#!date=2025-03-10 11:10:00
+#!date=2025-06-03 21:11:00
 #!support=约9392行
 #!proxy-select=REJECT
-#！repo=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list
+#repo：https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list
 #############################################
 # "REJECT"        策略返回 HTTP 状态码 404,不附带任何额外内容
 # "REJECT-200"    策略返回 HTTP 状态码 200,不附带任何额外内容
@@ -445,7 +445,10 @@ DOMAIN-SUFFIX,ad.duoduo.link
 
 # > 盯盯拍 广告联盟已包含
 
-
+# > 叮咚买菜
+DOMAIN, trackercollect.ddxq.mobi
+DOMAIN, ddfs-public.ddimg.mobi
+DOMAIN, rttrack.ddxq.mobi
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
 
@@ -784,6 +787,9 @@ DOMAIN-SUFFIX,d.meituan.net
 DOMAIN, adui.tg.meitu.com
 DOMAIN, aaid.uyunad.com
 
+# > 美柚
+DOMAIN,ad.seeyouyima.com
+
 # > 买单吧
 DOMAIN-KEYWORD,c-hzgt2.getui.com
 
@@ -1097,25 +1103,36 @@ DOMAIN-SUFFIX,m-adash.m.taobao.com
 DOMAIN-SUFFIX,adashbc.m.taobao.com
 
 # > 腾讯视频
-# DOMAIN, adsmind.gdtimg.com
-# DOMAIN, btrace.qq.com
-# DOMAIN, btrace.video.qq.com
-# DOMAIN, info4.video.qq.com
-# DOMAIN, info6.video.qq.com
-# DOMAIN, ios.video.mpush.qq.com
-# DOMAIN, mtrace.qq.com
-# DOMAIN, p.l.qq.com
-# DOMAIN, pgdt.gtimg.cn
-# DOMAIN, rpt.gdt.qq.com
-# DOMAIN-SUFFIX,trace.qq.com
-# DOMAIN-SUFFIX,tetrack.qq.com
-# DOMAIN-SUFFIX,tpns.tencent.com
-# DOMAIN-SUFFIX,api.poll.video.qq.com
-# DOMAIN-SUFFIX,static-res.qq.com
-# DOMAIN-SUFFIX,stat.tpns.tencent.com
-# DOMAIN, h.trace.qq.com
-# DOMAIN-KEYWORD,omgmta.qq.com
-# DOMAIN-KEYWORD,omgmta1.qq.com
+# 去除开屏，播放，暂停，青少年等广告。开启下面的规则播放时会有10秒左右的卡顿
+# DOMAIN,pgdt.gtimg.cn,REJECT
+# DOMAIN,ugchsy.gtimg.com,REJECT
+# DOMAIN,adsmind.gdtimg.com,REJECT
+# DOMAIN,btrace.video.qq.com,REJECT
+# DOMAIN,info4.video.qq.com,REJECT
+# DOMAIN,info6.video.qq.com,REJECT
+# DOMAIN-SUFFIX,api.poll.video.qq.com,REJECT
+# DOMAIN,activity.video.qq.com,REJECT
+# DOMAIN,ios.video.mpush.qq.com,REJECT
+# DOMAIN,p.l.qq.com,REJECT
+# DOMAIN,rpt.gdt.qq.com,REJECT
+# DOMAIN-SUFFIX,trace.qq.com,REJECT
+# DOMAIN-SUFFIX,tetrack.qq.com,REJECT
+# DOMAIN-SUFFIX,tpns.tencent.com,REJECT
+# DOMAIN-SUFFIX,stat.tpns.tencent.com,REJECT
+# DOMAIN-SUFFIX,static-res.qq.com,REJECT
+# DOMAIN-SUFFIX,omgmta.qq.com,REJECT
+# DOMAIN-SUFFIX,omgmta1.qq.com,REJECT
+# DOMAIN,tux.qq.com,REJECT
+# DOMAIN,iacc.qq.com,REJECT
+# DOMAIN,p2.l.qq.com,REJECT
+# DOMAIN,v3.gdt.qq.com,REJECT
+# DOMAIN,rmonitor.qq.com,REJECT
+# DOMAIN,xs.gdt.qq.com,REJECT
+# DOMAIN,aegis.qq.com,REJECT
+# DOMAIN,rdelivery.qq.com,REJECT
+# DOMAIN,wallpaper-1258344696.file.myqcloud.com,REJECT
+# DOMAIN,wallpaper-test-1258344696.file.myqcloud.com,REJECT
+# IP-CIDR,183.201.213.194/24,REJECT,no-resolve
 
 # >  腾讯
 DOMAIN-SUFFIX,news.ssp.qq.com
@@ -1205,8 +1222,7 @@ DOMAIN-SUFFIX,tajs.qq.com
 DOMAIN-SUFFIX,fusion.qq.com
 DOMAIN-SUFFIX,ios.bugly.qq.com
 DOMAIN, safebrowsing.urlsec.qq.com
-DOMAIN-SUFFIX,oth.str.mdt.qq.com
-DOMAIN-SUFFIX,l.qq.com
+DOMAIN, oth.str.mdt.qq.com
 DOMAIN, adsmind.apdcdn.tc.qq.com
 DOMAIN, adsmind.tc.qq.com
 DOMAIN, livep.l.t002.ottcn.com
@@ -1471,8 +1487,14 @@ DOMAIN, 39d83s.com
 # > 小利生活
 DOMAIN-KEYWORD,mpos-pic.helipay.com
 
+# > 小爱音箱
+DOMAIN, mistat.xiaomi.com
+
 # > 晓晓优选
-DOMAIN-SUFFIX,api-htp.beizi.biz
+DOMAIN-SUFFIX, api-htp.beizi.biz
+DOMAIN-SUFFIX, yfanads.com
+DOMAIN-SUFFIX, 1rtb.net
+DOMAIN-SUFFIX, adwangmai.com
 
 # > 新浪
 DOMAIN-SUFFIX,beacon.sina.com.cn
@@ -1507,7 +1529,7 @@ DOMAIN, ads.yahoo.com
 DOMAIN, ads.yahoo.de
 
 # > 优酷
-DOMAIN-SUFFIX, sm.cn
+#DOMAIN-SUFFIX, sm.cn
 DOMAIN-SUFFIX, acz.youku.com
 DOMAIN-SUFFIX, adx-core.youku.com
 DOMAIN-SUFFIX, adx-open-service.youku.com
@@ -4433,7 +4455,6 @@ DOMAIN-SUFFIX, steelhousemedia.com
 DOMAIN-SUFFIX, stg8.com
 DOMAIN-SUFFIX, stn88.com
 DOMAIN-SUFFIX, stocksbsc.com
-DOMAIN-SUFFIX, streamtape.com
 DOMAIN-SUFFIX, subswin.com
 DOMAIN-SUFFIX, sucodb.com
 DOMAIN-SUFFIX, sunjianhao.com

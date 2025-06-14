@@ -1,5 +1,6 @@
 #Copy from Nobyda
 #repo：https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Filter/AdRule.list
+
 DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao-b.com
 DOMAIN-SUFFIX,mcupdate.gstarcad.com
 DOMAIN-SUFFIX,adx.open-adx.com

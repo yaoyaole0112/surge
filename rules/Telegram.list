@@ -1,6 +1,6 @@
 # Repo：https://raw.githubusercontent.com/Repcz/Tool/X/Surge/Rules/Telegram.list
 # 规则名称: Telegram
-# 规则统计: 49
+# 规则统计: 50
 
 DOMAIN,api.mixpanel.com
 DOMAIN,events-gateway.ncdev.site
@@ -34,6 +34,7 @@ DOMAIN-KEYWORD,nicegram
 DOMAIN-KEYWORD,telegram
 IP-CIDR,149.154.160.0/20,no-resolve
 IP-CIDR,185.76.151.0/24,no-resolve
+IP-CIDR,5.28.192.0/18,no-resolve
 IP-CIDR,91.105.192.0/23,no-resolve
 IP-CIDR,91.108.12.0/22,no-resolve
 IP-CIDR,91.108.16.0/22,no-resolve
@@ -51,7 +52,6 @@ IP-ASN,44907,no-resolve
 IP-ASN,59930,no-resolve
 IP-ASN,62014,no-resolve
 IP-ASN,62041,no-resolve
-
 # Nicegram
 DOMAIN-KEYWORD,nicegram
 

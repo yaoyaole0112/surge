@@ -1,7 +1,8 @@
-# 针对部分网站显示IP归属地的分流规则
-# anti-ip-attribution surge.list v0.3.1 24db48a4973b31d718703136cfcc2b3621171f36
-# https://github.com/SunsetMkt/anti-ip-attribution
 # repo：https://raw.githubusercontent.com/SunsetMkt/anti-ip-attribution/main/generated/surge.list
+# Surge分流规则
+# 针对部分网站显示IP归属地的分流规则
+# anti-ip-attribution surge.list v0.3.1 02fb4202d7d0cd9a67941d12ae7eedeaeb4d4bbf
+# https://github.com/SunsetMkt/anti-ip-attribution
 # Surge分流规则
 DOMAIN,httpdns.bilivideo.com,REJECT
 IP-CIDR,47.101.175.206/32,REJECT,no-resolve

@@ -1,5 +1,5 @@
 # 本碎片只包含常见广告关键字、广告联盟。无副作用，放心使用
-# repo：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+#repo：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 
 # 广告关键词
 DOMAIN-KEYWORD,admarvel
@@ -276,7 +276,6 @@ DOMAIN-SUFFIX,mobaders.com
 DOMAIN-SUFFIX,mobclix.com
 DOMAIN-SUFFIX,mobgi.com
 DOMAIN-SUFFIX,mobisage.cn
-DOMAIN-SUFFIX,mobvista.com
 DOMAIN-SUFFIX,moogos.com
 DOMAIN-SUFFIX,mopub.com
 DOMAIN-SUFFIX,moquanad.com
@@ -286,7 +285,6 @@ DOMAIN-SUFFIX,myhug.cn
 DOMAIN-SUFFIX,mzy2014.com
 DOMAIN-SUFFIX,networkbench.com
 DOMAIN-SUFFIX,ninebox.cn
-DOMAIN-SUFFIX,ntalker.com
 DOMAIN-SUFFIX,nylalobghyhirgh.com
 DOMAIN-SUFFIX,o2omobi.com
 DOMAIN-SUFFIX,oadz.com

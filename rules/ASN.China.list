@@ -3,7 +3,7 @@
 #!author=VirgilClyne
 #!homepage=https://github.com/VirgilClyne/GetSomeFries/wiki/🌐-ASN
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png
-#!repo=https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list
+#repo：https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list
 
 IP-ASN,4134 // 中国电信骨干网
 IP-ASN,4538 // 中国教育科研网络中心
@@ -5255,7 +5255,6 @@ IP-ASN,212237 // Changgong Zhang
 # IP-ASN,212292 // SKYWTH.COM LTD 【未广播中国大陆IP】
 # IP-ASN,212371 // Huizhou HuiGu CloudTech 有限公司 【未广播中国大陆IP】
 # IP-ASN,212532 // XIAO YANG WEN RUI 【未广播中国大陆IP】
-# IP-ASN,212623 // Fan Zhong 【未广播中国大陆IP】
 # IP-ASN,212690 // Enyu Li 【未广播中国大陆IP】
 # IP-ASN,212793 // Xiwei Ye 【未广播中国大陆IP】
 # IP-ASN,213069 // PANYUAN HUANG
