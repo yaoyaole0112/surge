@@ -239,3 +239,5 @@ DOMAIN,api.wmpvp.com
 DOMAIN-SUFFIX,ithome.com
 DOMAIN-SUFFIX,userlink.alicdn.com
 
+# > IP地址模块
+DOMAIN-SUFFIX,ip-api.com
