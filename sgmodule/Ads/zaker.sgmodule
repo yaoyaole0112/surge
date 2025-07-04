@@ -1,0 +1,22 @@
+#!name=去除广告｜ZAKER
+#!desc=移除开屏广告、置顶轮播图广告和文末广告。\n作者：可莉🅥
+#!category=去除广告
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-06-30 23:34:19
+
+[Body Rewrite]
+http-response-jq ^https:\/\/iphone\.myzaker\.com\/zaker\/article_mongo_sec\.php\? 'delpaths([["data","ad_url"]])'
+http-response-jq ^https:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\? 'delpaths([["data","article_bottom"]])'
+http-response-jq ^https:\/\/ggs\.myzaker\.com\/zk_article_ad\.php\? 'delpaths([["data","recommend_ad"]])'
+http-response-jq ^https:\/\/iphone\.myzaker\.com\/zaker\/follow_promote\.php\? '.data.list |= map(select(.type != "web"))'
+http-response-jq ^https:\/\/iphone\.myzaker\.com\/zaker\/car_tab\/index\.php\? '.data.gallery |= map(select(.type != "web"))'
+
+[Map Local]
+# 开屏广告
+^https:\/\/iphone\.myzaker\.com\/zaker\/cover\.php\? data-type=text data="{}" status-code=200
+
+# 热点 - 信息流广告
+^https:\/\/iphone\.myzaker\.com\/zaker\/block_top_ad\.php\? data-type=text data="{}" status-code=200
+
+[MITM]
+hostname = %APPEND% iphone.myzaker.com, ggs.myzaker.com
