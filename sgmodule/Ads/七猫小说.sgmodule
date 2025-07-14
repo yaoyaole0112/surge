@@ -1,11 +1,11 @@
 #!name=去除广告｜七猫小说
-#!desc=移除大部分七猫小说广告，但受限于七猫小说自身对MitM和VPN状态的检测，部分页面广告无法移除。\n作者：可莉🅥\n更新：2024-11-28 00:00:00
+#!desc=移除大部分七猫小说广告，但受限于七猫小说自身对MitM和VPN状态的检测，部分页面广告无法移除。\n作者：可莉🅥
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/SevenCat.png
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id1387717110
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!update=2024-11-28 00:00:00
+#!date=2025-05-13 15:17:08
 
 [Rule]
 DOMAIN,cdn-ad.wtzw.com,REJECT,extended-matching,pre-matching
