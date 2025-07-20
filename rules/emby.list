@@ -42,8 +42,8 @@ DOMAIN-SUFFIX,beebi.org
 
 # Zn存档服
 DOMAIN-SUFFIX,8897122.xyz
-DOMAIN-SUFFIX,emby1.zn.al
-DOMAIN-SUFFIX,emby.zn.al
+#DOMAIN-SUFFIX,emby1.zn.al
+#DOMAIN-SUFFIX,emby.zn.al
 
 # 疯狂星期四V我50
 DOMAIN-SUFFIX,kfc.v50.su
