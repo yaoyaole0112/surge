@@ -40,7 +40,7 @@ DOMAIN-SUFFIX,meowfly.de
 # 比比
 DOMAIN-SUFFIX,beebi.org
 
-# 存档服
+# Zn存档服
 DOMAIN-SUFFIX,8897122.xyz
 DOMAIN-SUFFIX,emby1.zn.al
 DOMAIN-SUFFIX,emby.zn.al
@@ -54,3 +54,8 @@ DOMAIN-SUFFIX,zoxfree.3767483.xyz
 # Misty
 DOMAIN-SUFFIX,misty.cx
 
+# SNTP Media Lite
+DOMAIN-SUFFIX,lite.cn2gias.uk
+
+# 云上Emby
+DOMAIN-SUFFIX,s.outong-valve.com
