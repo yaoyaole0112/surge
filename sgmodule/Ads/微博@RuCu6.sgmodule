@@ -4,7 +4,7 @@
 #!icon=https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/weibo.png
 #!Repo=https://kelee.one/Tool/Loon/Plugin/Weibo_remove_ads.plugin
 #!category=去除广告
-#!date=2025-07-04 16:37:41
+#!date=2025-07-14 22:11:40
 
 [Rule]
 DOMAIN-SUFFIX,uve.weibo.com,DIRECT,extended-matching
