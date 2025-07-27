@@ -1,0 +1,69 @@
+Port: 9000                                  # MideWarp监听端口
+
+MediaServer:                                # 媒体服务器相关设置
+  Type: Emby                                # 媒体服务器类型（可选选项：Emby）
+  ADDR: http://192.168.1.21:8096                    # 媒体服务器地址
+  AUTH: 53cb0ecd0e2b452faea7f0491dd10959                             # 媒体服务器认证方式
+
+Cache:                                      # 缓存设置
+  Type: Memory                              # 缓存类型（可选项：Memory内存缓存）
+  WebCache: False                           # 是否启用Web缓存中间件（若MdiaWarp离上游服务距离较近则不建议启用）
+
+Logger:                                     # 日志设定
+  AccessLogger:                             # 访问日志设定
+    Console: True                           # 是否将访问日志文件输出到终端中
+    File: False                             # 是否将访问日志文件记录到文件中
+  ServiceLogger:                            # 服务日志设定
+    Console: True                           # 是否将服务日志文件输出到终端中
+    File: True                              # 是否将服务日志文件记录到文件中
+
+Web:                                        # Web页面修改相关设置
+  Enable: True                              # 总开关
+  Custom: True                              # 是否加载自定义静态资源
+  Index: false                               # 是否从static目录读取index.html文件 
+  Head: |                                   # 是否添加自定义字段到index.html的HEAD中
+    <script src="/MediaWarp/static/custom/emby-front-end-mod/actor-plus.js"></script>
+    <script src="/MediaWarp/static/custom/emby-front-end-mod/emby-swiper.js"></script>
+    <script src="/MediaWarp/static/custom/emby-front-end-mod/emby-tab.js"></script>
+    <script src="/MediaWarp/static/custom/emby-front-end-mod/fanart-show.js"></script>
+    <script src="/MediaWarp/static/custom/emby-front-end-mod/playbackRate.js"></script>
+
+  ExternalPlayerUrl: True                   # 是否开启外置播放器
+  ActorPlus: false                           # 过滤没有头像的演员和制作人员
+  FanartShow: True                          # 显示同人图（fanart图）
+  Danmaku: True                             # Web显示弹幕
+  VideoTogether: False                       # 共同观影，详情见 https://videotogether.github.io/
+  BeautifyCSS: True                         # Emby美化CSS样式
+
+ClientFilter:                               # 客户端过滤器
+  Enable: False                             # 是否启用客户端过滤器
+  Mode: BlackList # WhileList / BlackList   # 黑白名单模式
+  ClientList:                               # 名单列表
+    - Fileball
+    - Infuse
+
+# 302重定向相关配置
+
+HTTPStrm: 
+  Enable: False                            # 是否开启HttpStrm重定向
+  TransCode: True                          # False：强制关闭转码 True：保持原有转码设置
+  PrefixList:                               # EmbyServer中Strm文件的前缀（符合该前缀的Strm文件且被正确识别为http协议都会路由到该规则下）
+    - /media/strm/http
+    - /media/strm/https
+
+AlistStrm:                                  # AlistStrm相关配置（Strm文件内容是Alist上文件的路径，目前仅支持适配Alist V3）
+  Enable: True                              # 是否启用AlistStrm重定向
+  TransCode: False                           # False：强制关闭转码 True：保持原有转码设置
+  RawURL: False                             # Fasle：直接响应 Alist 上游的真实链接 True：响应 Alist 服务器的直链（要求客户端可以访问到 Alist）
+  List:                                     # Alist服务关配置列表
+    - ADDR: http://192.168.1.21:5244      # Alist服务器地址
+      Token: 960112yong  # Alist Token
+      PrefixList:                           # EmbyServer中Strm文件的前缀（符合该前缀的Strm文件都会路由到该规则下）
+         - /网盘影视
+
+Subtitle:                                   # 字体相关设置
+  Enable: True                              # 启用
+  SRT2ASS: False                             # SRT 字幕转 ASS 字幕
+  ASSStyle:                                 # SRT 字幕转 ASS 字幕使用的样式
+    - "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding"
+    - "Style: Default,楷体,20,&H03FFFFFF,&H00FFFFFF,&H00000000,&H02000000,-1,0,0,0,100,100,0,0,1,1,0,2,10,10,10,1"03FFFFFF,&H00FFFFFF,&H00000000,&H02000000,-1,0,0,0,100,100,0,0,1,1,0,2,10,10,10,1"
