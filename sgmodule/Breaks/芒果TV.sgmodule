@@ -1,7 +1,6 @@
 #!name=解锁会员｜芒果TV
 #!desc=解锁会员, 芒果TV会员画质, 去广告, 页面优化\n作者：WeiGiegie
 #!category=解锁会员
-
 [URL Rewrite]
 ^https?://mobile.da.mgtv.com\/m\/page - reject
 
@@ -13,3 +12,4 @@ mgtk = type=http-request, pattern=^https?:\/\/mobile-stream\.api\.mgtv\.com\/v1\
 
 [MITM]
 hostname = %APPEND% *mgtv.com
+
