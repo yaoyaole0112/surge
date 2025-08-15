@@ -6,8 +6,8 @@
 #!date=2025-05-13 15:17:08
 
 [Rule]
-DOMAIN,180.76.76.200,REJECT
-IP-CIDR,180.76.76.200/32,REJECT,no-resolve
+DOMAIN,180.76.76.200,REJECT,extended-matching,pre-matching
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve,pre-matching
 
 [Body Rewrite]
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile$ 'delpaths([["recom_naws_list"]])'
@@ -26,14 +26,12 @@ http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home$ '.tools.sho
 http-response-jq ^https:\/\/tiebac\.baidu\.com\/c\/f\/frs\/frsBottom$ 'delpaths([["card_activity"]])'
 
 [Map Local]
-# 弹窗广告
 ^https:\/\/tieba\.baidu\.com\/c\/f\/member\/getMemberPopups$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
-# 搜索填充词
 ^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
-Proto处理 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://kelee.one/Resource/Script/Tieba/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10
+ProtoBuf处理 = type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://kelee.one/Resource/JavaScript/Tieba/tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=10
 
 [MITM]
 hostname = %APPEND% tiebac.baidu.com, tieba.baidu.com
