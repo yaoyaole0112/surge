@@ -3,6 +3,7 @@
 #!author=Maasea[https://github.com/Maasea], VirgilClyne[https://github.com/VirgilClyne], Choler[https://github.com/Choler], DivineEngine[https://github.com/DivineEngine], app2smile[https://github.com/app2smile]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/YouTube.png
 #!openUrl=https://apps.apple.com/app/id544007664
+#!category=去除广告
 #!date=2025-08-24 22:03:19
 #!arguments=blockUpload:false,blockShorts:false,blockImmersive:false,captionLang:"zh-Hans",lyricLang:"zh-Hans",debug:false
 
