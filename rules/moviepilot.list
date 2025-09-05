@@ -1,0 +1,11 @@
+# > TMDB
+DOMAIN-KEYWORD,tmdb
+
+# > IMDB
+DOMAIN-KEYWORD,imdb
+
+# > MoviePilot
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,thetvdb.com
+DOMAIN-SUFFIX,themoviedb.org
