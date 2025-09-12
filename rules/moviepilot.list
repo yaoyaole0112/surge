@@ -10,3 +10,6 @@ DOMAIN-SUFFIX,telegram.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-KEYWORD,themoviedb
+
+# > GITHUB
+DOMAIN-KEYWORD,github
