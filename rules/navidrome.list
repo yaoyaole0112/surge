@@ -1,5 +1,6 @@
 # IKUN音乐服
 DOMAIN-SUFFIX,music.xxxh.de
+DOMAIN-SUFFIX,diaojinping.de
 
 # 未响
 DOMAIN-SUFFIX,music.mefun.org
@@ -7,5 +8,9 @@ DOMAIN-SUFFIX,music.mefun.org
 # 鹅皇
 DOMAIN-SUFFIX,dhyy.eu.org
 
+#南瓜
+DOMAIN-SUFFIX,nangua.de
+
 # 音海拾贝
 DOMAIN-SUFFIX,makifx.com
+DOMAIN-SUFFIX,aiinyue.com
