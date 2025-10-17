@@ -4,14 +4,14 @@
 # anti-ip-attribution surge.list v0.3.1 02fb4202d7d0cd9a67941d12ae7eedeaeb4d4bbf
 # https://github.com/SunsetMkt/anti-ip-attribution
 # 抖音修改IP
-HOST-SUFFIX,amemv.com
-HOST-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,douyinvod.com
 
 # 快手修改IP
-HOST-SUFFIX,gifshow.com
-HOST-SUFFIX,apissl.ksapisrv.com
+DOMAIN-SUFFIX,gifshow.com
+DOMAIN-SUFFIX,apissl.ksapisrv.com
 # 小红书修改IP
-HOST-SUFFIX,edith.xiaohongshu.com
+DOMAIN-SUFFIX,edith.xiaohongshu.com
 
 # Surge分流规则
 DOMAIN,httpdns.bilivideo.com,REJECT
