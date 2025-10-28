@@ -112,7 +112,7 @@ DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,ugdtimg.com,REJECT,extended-matching,pre-matching
-IP-CIDR,47.110.187.87/32,REJECT,pre-matching
+IP-CIDR,47.110.187.87/32,REJECT,pre-matching,no-resolve
 
 [URL Rewrite]
 #>云闪付 //wallet.95516.com
