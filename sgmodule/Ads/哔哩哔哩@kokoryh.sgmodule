@@ -4,7 +4,7 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
 #!openUrl=https://apps.apple.com/app/id736536022
 #!category=去除广告
-#!date=2025-08-28 23:53:54
+#!date=2025-10-22 01:24:04
 #!arguments=showUpList:"auto",purifyTopReplies:true,purifyWebpage:true,airborne:false,logLevel:"off"
 
 [Rule]
@@ -48,7 +48,7 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? '.data.
 
 ProtoBuf处理 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://kelee.one/Resource/JavaScript/Bilibili/Bilibili_proto_response_kokoryh.js, requires-body=true, binary-body-mode=true, argument="[{{{showUpList}}}, {{{purifyTopReplies}}}, {{{airborne}}}, {{{logLevel}}}]"
 
-移除直播间网页广告 = type=http-response, pattern=^https:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://kelee.one/Resource/JavaScript/Bilibili/webpage_Bilibili_remove_ads_kokoryh.js, requires-body=true
+移除直播间网页广告 = type=http-response, pattern=^https:\/\/(live|www)\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://kelee.one/Resource/JavaScript/Bilibili/webpage_Bilibili_remove_ads_kokoryh.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, live.bilibili.com, line3-h5-mobile-api.biligame.com
+hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, live.bilibili.com, www.bilibili.com, line3-h5-mobile-api.biligame.com
