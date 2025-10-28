@@ -4,21 +4,42 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Website_icon/120px/TencentAd.png
 #!category=去除广告
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-08-31 04:23:37
+#!date=2025-10-26 01:24:37
 
 [Rule]
 AND,((DOMAIN-KEYWORD,tnc),(OR,((DOMAIN-SUFFIX,capcutapi.com),(DOMAIN-SUFFIX,zijieapi.com),(DOMAIN-SUFFIX,isnssdk.com),(DOMAIN-SUFFIX,toutiaoapi.com),(DOMAIN-SUFFIX,bytedance.com),(DOMAIN-SUFFIX,snssdk.com),(DOMAIN-SUFFIX,sgsnssdk.com)))),DIRECT
 AND,((OR,((DOMAIN-KEYWORD,api-access),(DOMAIN-KEYWORD,log-api))),(DOMAIN-KEYWORD,pangolin-sdk-toutiao)),REJECT
 AND,((DOMAIN-KEYWORD,-ad-),(DOMAIN-SUFFIX,byteimg.com)),REJECT
 AND,((DOMAIN-KEYWORD,ads),(DOMAIN-KEYWORD,normal),(DOMAIN-SUFFIX,zijieapi.com)),REJECT
-DOMAIN,gromore.pangolin-sdk-toutiao.com,REJECT
+DOMAIN,lf-ad-ies.bytecdn.cn,REJECT
+DOMAIN,dig.bdurl.net,REJECT
+DOMAIN,extlog.snssdk.com,REJECT
+DOMAIN,mcs.snssdk.com,REJECT
+DOMAIN-SUFFIX,bds.snssdk.com,REJECT
+DOMAIN-SUFFIX,byteadverts.com,REJECT
+DOMAIN-SUFFIX,ctobsnssdk.com,REJECT
+DOMAIN-SUFFIX,pangolin-dsp-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-dsp-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com,REJECT
+DOMAIN-SUFFIX,pangolin.snssdk.com,REJECT
+DOMAIN-SUFFIX,panplayable-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,panplayable-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-snssdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-SUFFIX,sf3-ttcdn-tos.pstatp.com,REJECT
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com,REJECT
 DOMAIN-KEYWORD,-ad-sign.byteimg.com,REJECT
 DOMAIN-KEYWORD,-ad.byteoversea.com,REJECT
 DOMAIN-KEYWORD,asiad.byteactivity,REJECT
+DOMAIN-SUFFIX,pangle.io,REJECT
 DOMAIN-KEYWORD,iflyad.bj.openstorage.cn,REJECT
 DOMAIN-KEYWORD,bjimp.voiceads.cn,REJECT
 DOMAIN-SUFFIX,1rtb.net,REJECT
+DOMAIN-SUFFIX,1rtb.com,REJECT
 DOMAIN-SUFFIX,halomobi.com,REJECT
 DOMAIN-SUFFIX,hubcloud.com.cn,REJECT
 DOMAIN-SUFFIX,inmobi.cn,REJECT
@@ -100,6 +121,7 @@ DOMAIN-SUFFIX,ugdtimg.com,REJECT
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve
 DOMAIN-SUFFIX,openinstall.io,REJECT
 DOMAIN-SUFFIX,getui.com,REJECT
+DOMAIN-SUFFIX,getui.net,REJECT
 DOMAIN-SUFFIX,igexin.com,REJECT
 DOMAIN-SUFFIX,umtrack.com,REJECT
 DOMAIN-SUFFIX,umeng.com,REJECT
@@ -113,10 +135,12 @@ DOMAIN,ems.youku.com,REJECT
 DOMAIN,hudong.alicdn.com,REJECT
 DOMAIN,et.tanx.com,REJECT
 DOMAIN,df.tanx.com,REJECT
+DOMAIN,opehs.tanx.com,REJECT
 DOMAIN,beacon-api.aliyuncs.com,REJECT
 DOMAIN,adash.man.aliyuncs.com,REJECT
 DOMAIN,applog.uc.cn,REJECT
 AND,((DOMAIN-KEYWORD,adash),(DOMAIN-SUFFIX,ut.taobao.com)),REJECT
+DOMAIN,huichuan.sm.cn,REJECT
 DOMAIN,nex.163.com,REJECT
 DOMAIN,iad.g.163.com,REJECT
 DOMAIN,gorgon.youdao.com,REJECT
@@ -157,6 +181,7 @@ DOMAIN-SUFFIX,adjust.com,REJECT
 DOMAIN-SUFFIX,adjust.net.in,REJECT
 DOMAIN-SUFFIX,doubleclick-cn.net,REJECT
 DOMAIN-SUFFIX,googlesyndication-cn.com,REJECT
+DOMAIN,fundingchoicesmessages.google.com,REJECT
 DOMAIN-SUFFIX,xinduoad.com,REJECT
 DOMAIN-SUFFIX,kuaiyiad.com,REJECT
 DOMAIN,statis.miwuad.com,REJECT
@@ -170,6 +195,7 @@ DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
 DOMAIN,mercury-gateway.ixiaochuan.cn,REJECT
 DOMAIN,adapi.izuiyou.com,REJECT
 DOMAIN-SUFFIX,domob.cn,REJECT
+DOMAIN-SUFFIX,adwangmai.com,REJECT
 DOMAIN-SUFFIX,bxsnews.com,REJECT
 DOMAIN-SUFFIX,tradplusad.com,REJECT
 DOMAIN-SUFFIX,fancyapi.com,REJECT
@@ -180,6 +206,16 @@ DOMAIN-SUFFIX,unityads.unitychina.cn,REJECT
 DOMAIN-SUFFIX,tapjoy.com,REJECT
 DOMAIN-SUFFIX,ads.vungle.com,REJECT
 DOMAIN-SUFFIX,adsmoloco.com,REJECT
+DOMAIN-SUFFIX,smadex.com,REJECT
+DOMAIN-SUFFIX,tapad.com,REJECT
+DOMAIN-SUFFIX,adsappier.com,REJECT
+DOMAIN-SUFFIX,inmobi.com,REJECT
+DOMAIN-SUFFIX,inmobicdn.net,REJECT
+DOMAIN-SUFFIX,appsflyersdk.com,REJECT
+DOMAIN-SUFFIX,applvn.com,REJECT
+DOMAIN-SUFFIX,moloco.com,REJECT
+DOMAIN-SUFFIX,rayjump.com,REJECT
+DOMAIN-SUFFIX,rixengine.com,REJECT
 
 [URL Rewrite]
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
