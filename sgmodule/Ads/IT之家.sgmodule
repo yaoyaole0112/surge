@@ -4,14 +4,14 @@
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/IThome.png
 #!openUrl=https://apps.apple.com/app/id570610859
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-10-24 03:22:31
+#!date=2025-12-01 01:25:27
 #!arguments=removePinnedArticles:false,removeAllBanners:false
 
 [URL Rewrite]
 ^https?:\/\/dat\.ruanmei\.com\/ithome\/money\/acd\.json$ - reject
 
 [Script]
-IT之家去广告 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/iphone\/\d+$|topmenu\/getfeeds\?), script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, argument="[{{{removeAllBanners}}},{{{removePinnedArticles}}}]"
+IT之家去广告 = type=http-response, pattern=^https:\/\/napi\.ithome\.com\/api\/(news\/indexv2\/iphone\/\d+|topmenu\/getfeeds\?), script-path=https://kelee.one/Resource/JavaScript/IThome/IThome_remove_ads.js, requires-body=true, argument="[{{{removeAllBanners}}},{{{removePinnedArticles}}}]"
 
 [MITM]
 hostname = %APPEND% napi.ithome.com, api.zuihuimai.com, dat.ruanmei.com
