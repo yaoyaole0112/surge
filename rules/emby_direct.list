@@ -3,36 +3,20 @@
 # Reflix App
 DOMAIN-SUFFIX,api.reflix.top
 
-# 起点站公益路线
-DOMAIN-SUFFIX,free.28.al
-DOMAIN-SUFFIX,qdzfreecdn.b-cdn.net
+# OKEmby
+DOMAIN-SUFFIX,link00.okemby.org
 
-# 起点站公费路线
-DOMAIN-SUFFIX,nb.28.al
-DOMAIN-SUFFIX,qdz1.top
-
-# 琴鸟
-DOMAIN-SUFFIX,cdn.lyrebirdemby.com
-IP-CIDR,188.172.228.65/32,no-resolve
+# ShrekPublic
+DOMAIN-SUFFIX,public.shrekmedia.org
 
 # SaturDay.Lite //服务器线路及位置: 美国, 不保证直连
 DOMAIN-SUFFIX,lite.saturdayvideo.top
 
-# Nanflix
-DOMAIN-SUFFIX,us.nanflix.net
+# SNTP Media Lite
+DOMAIN-SUFFIX,lite.cn2gias.uk
 
 # 惊蛰
 DOMAIN-SUFFIX,emby.jingzhe.pro
-
-# Onyra
-DOMAIN-SUFFIX,onyra.uk
-
-# 云梯(机场服)
-#DOMAIN-SUFFIX,yunti.online
-
-# 入机
-DOMAIN-SUFFIX,embycf.rjemby.com
-DOMAIN-SUFFIX,rjcf.rjf37.com
 
 # 飞了个喵
 DOMAIN-SUFFIX,meowfly.de
@@ -40,22 +24,8 @@ DOMAIN-SUFFIX,meowfly.de
 # 比比
 DOMAIN-SUFFIX,beebi.org
 
-# Zn存档服
-DOMAIN-SUFFIX,8897122.xyz
-#DOMAIN-SUFFIX,emby1.zn.al
-#DOMAIN-SUFFIX,emby.zn.al
-
-# 疯狂星期四V我50
-DOMAIN-SUFFIX,kfc.v50.su
-
 # ZoxFree
 DOMAIN-SUFFIX,zoxfree.3767483.xyz
 
 # Misty
 DOMAIN-SUFFIX,misty.cx
-
-# SNTP Media Lite
-DOMAIN-SUFFIX,lite.cn2gias.uk
-
-# 云上Emby
-DOMAIN-SUFFIX,s.outong-valve.com
