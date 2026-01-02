@@ -9,23 +9,11 @@ DOMAIN-SUFFIX,link00.okemby.org
 # ShrekPublic
 DOMAIN-SUFFIX,public.shrekmedia.org
 
-# SaturDay.Lite //服务器线路及位置: 美国, 不保证直连
-DOMAIN-SUFFIX,lite.saturdayvideo.top
-
 # SNTP Media Lite
 DOMAIN-SUFFIX,lite.cn2gias.uk
-
-# 惊蛰
-DOMAIN-SUFFIX,emby.jingzhe.pro
-
-# 飞了个喵
-DOMAIN-SUFFIX,meowfly.de
 
 # 比比
 DOMAIN-SUFFIX,beebi.org
 
 # ZoxFree
 DOMAIN-SUFFIX,zoxfree.3767483.xyz
-
-# Misty
-DOMAIN-SUFFIX,misty.cx
