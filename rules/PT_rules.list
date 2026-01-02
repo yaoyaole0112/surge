@@ -1,0 +1,5 @@
+# PT站规则
+DOMAIN-SUFFIX,agsvpt.com,SGP // AGSV > PT代理
+IP-CIDR,160.202.250.146/32,SGP,no-resolve // AGSV > PT代理
+IP-CIDR,103.36.223.241/32,SGP,no-resolve // AGSV > PT代理
+DOMAIN-SUFFIX,agsvpt.cn,SGP // AGSV > PT代理
