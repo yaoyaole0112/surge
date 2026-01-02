@@ -1,0 +1,13 @@
+#!name=功能插件｜TestFlight区域解除
+#!desc=解除TestFlight的区域限制，支持tvOS。\n作者：可莉🅥
+#!author=N可莉🅥
+#!category=功能插件
+#!system=ios
+#!date=2025-09-02 23:42:06
+
+[Body Rewrite]
+http-request ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ "storefrontId" : "\d{6}-\d{2},\d{2}", "storefrontId":"143441-19,29",
+
+[MITM]
+hostname = %APPEND% testflight.apple.com
+
