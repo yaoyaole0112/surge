@@ -4,12 +4,17 @@ DOMAIN-KEYWORD,tmdb
 # > IMDB
 DOMAIN-KEYWORD,imdb
 
+# > fanart
+DOMAIN-KEYWORD,fanart
+
 # > MoviePilot
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,telegram.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,themoviedb.org
-DOMAIN-KEYWORD,themoviedb
+DOMAIN-KEYWORD,moviedb
+DOMAIN-KEYWORD,movie-pilot
+DOMAIN-KEYWORD,hdhive
 
 # > GITHUB
 DOMAIN-KEYWORD,github
