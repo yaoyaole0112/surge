@@ -1,10 +1,10 @@
-#!name =  iRingo: 📺 TV app
+#!name = 📺 TV app
 #!desc = 全面自定义「TV app」功能
 #!openUrl = http://boxjs.com/#/app/iRingo.TV
 #!author = VirgilClyne[https://github.com/VirgilClyne]
 #!homepage = https://NSRingo.github.io/guide/apple-tv
 #!icon = https://developer.apple.com/assets/elements/icons/apple-tv/apple-tv-128x128.png
-#!category =  iRingo
+#!category = 功能插件
 #!date = 2025-04-17 03:19:05
 #!version = 3.4.4
 #!arguments = ThirdParty:false,isWorkaroundSSLPinning:true,LogLevel:"WARN"
