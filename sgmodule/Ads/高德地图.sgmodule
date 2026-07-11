@@ -5,12 +5,12 @@
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id461703208
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2026-02-22 06:04:15
+#!date=2026-06-01 17:11:35
 
 [Rule]
-DOMAIN,amap-aos-info-nogw.amap.com,REJECT,extended-matching,pre-matching
-DOMAIN,free-aos-cdn-image.amap.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,v.smtcdns.com,REJECT,extended-matching,pre-matching
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT
+DOMAIN,free-aos-cdn-image.amap.com,REJECT
+DOMAIN-SUFFIX,v.smtcdns.com,REJECT
 
 [Body Rewrite]
 http-response-jq ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? 'delpaths([["data","commonMaterial"]])'
@@ -20,10 +20,6 @@ http-response-jq ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\? 'd
 http-response-jq ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? 'delpaths([["data","carTips","data","popupInfo"]])'
 
 [Map Local]
-^https:\/\/m5-zb\.amap\.com\/ws\/ride\/home\/page\/get_commuting_card\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
