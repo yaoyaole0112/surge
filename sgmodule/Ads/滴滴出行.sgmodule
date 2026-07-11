@@ -5,7 +5,7 @@
 #!category=去除广告
 #!openUrl=https://apps.apple.com/app/id554499054
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-12-29 17:07:29
+#!date=2026-06-01 17:11:35
 
 [Rule]
 DOMAIN,gwp.xiaojukeji.com,REJECT
