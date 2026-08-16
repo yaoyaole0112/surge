@@ -1,5 +1,11 @@
 # > TMDB
 DOMAIN-KEYWORD,tmdb
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-KEYWORD,moviedb
+DOMAIN-SUFFIX,image.tmdb.org
+
+# > TVDB
+DOMAIN-SUFFIX,thetvdb.com
 
 # > IMDB
 DOMAIN-KEYWORD,imdb
@@ -8,13 +14,10 @@ DOMAIN-KEYWORD,imdb
 DOMAIN-KEYWORD,fanart
 
 # > MoviePilot
-DOMAIN-SUFFIX,githubusercontent.com
-DOMAIN-SUFFIX,telegram.org
-DOMAIN-SUFFIX,thetvdb.com
-DOMAIN-SUFFIX,themoviedb.org
-DOMAIN-KEYWORD,moviedb
 DOMAIN-KEYWORD,movie-pilot
-DOMAIN-KEYWORD,hdhive
+DOMAIN-KEYWORD,moviepilot
 
 # > GITHUB
 DOMAIN-KEYWORD,github
+DOMAIN-SUFFIX,api.github.com
+DOMAIN-SUFFIX,githubusercontent.com
